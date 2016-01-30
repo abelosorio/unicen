@@ -1,0 +1,1887 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass report
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Trabajo práctico Nº 1: Presentación de material
+\end_layout
+
+\begin_layout Description
+Alumno Abel M.
+ Osorio
+\end_layout
+
+\begin_layout Description
+Materia Química Tecnológica
+\end_layout
+
+\begin_layout Description
+Carrera Ciclo Inicial en Ingeniería (orientación Sistemas)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Mechero tipo Bunsen
+\end_layout
+
+\begin_layout Standard
+Fue inventado por 
+\noun on
+Robert Bunsen
+\noun default
+ en 1857.
+ Se utiliza para calentar o esterilizar muestras o reactivos químicos.
+ Tiene una base pesada en la que se introduce el suministro de gas.
+ De allí parte un tubo vertical por el que el gas fluye atravesando un pequeño
+ agujero en el fondo de tubo.
+ Algunas perforaciones en los laterales del tubo permiten la entrada de
+ aire en el flujo de gas (gracias al efecto 
+\emph on
+Venturi
+\emph default
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Description
+Efecto
+\begin_inset space ~
+\end_inset
+
+Venturi El efecto Venturi (también conocido tubo de Venturi) consiste en
+ que un fluido en movimiento dentro de un conducto cerrado disminuye su
+ presión al aumentar la velocidad después de pasar por una zona de sección
+ menor.
+ Si en este punto del conducto se introduce el extremo de otro conducto,
+ se produce una aspiración del fluido que va a pasar al segundo conducto.
+ Este efecto, demostrado en 1797, recibe su nombre del físico italiano Giovanni
+ Battista Venturi (1746-1822).
+\end_layout
+
+\end_inset
+
+) proporcionando una mezcla inflamable a la salida de los gases en la parte
+ superior del tubo donde se produce la combustión, muy eficaz para la química
+ avanzada.
+ Si se incrementa el flujo de gas a través del tubo mediante la apertura
+ de la válvula aguja crecerá el tamaño de la llama.
+ Sin embargo, a menos que se ajuste también la entrada de aire, la temperatura
+ de la llama descenderá porque la cantidad incrementada de gas se mezcla
+ con la misma cantidad de aire, dejando a la llama con poco oxígeno.
+ La llama azul en un mechero Bunsen es más caliente que la llama amarilla.
+ La forma más común de encender el mechero es mediante la utilización de
+ un fósforo o un encendedor a chispa.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename mechero_bunsen.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Mechero Bunsen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Trípode
+\end_layout
+
+\begin_layout Standard
+Es un equipo de tres patas (
+\emph on
+trípode
+\emph default
+ deriva de la palabra 
+\emph on
+tripous
+\emph default
+ del griego, que significa 
+\begin_inset Quotes eld
+\end_inset
+
+tres patas
+\begin_inset Quotes erd
+\end_inset
+
+) utilizado en los laboratorios para sostener distintos objetos.
+ Se puede usar en complemento con mecheros para calentar sustancias (en
+ este caso debe utilizarse también una tela o malla metálica para repartir
+ el calor emitido por el mechero).
+ También sirve para sujetar con mayor comodidad cualquier material que se
+ use en el laboratorio.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename tripode.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Trípode
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Tela metálica
+\end_layout
+
+\begin_layout Standard
+Se construye utilizando alambre de metal galvanizado, resistente a altas
+ temperaturas.
+ Se utiliza en complemento de un mechero, para distribuir el calor producido
+ por el mismo hacia un vaso o matraz.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename tela_metalica.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Tela metálica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Soporte universal
+\end_layout
+
+\begin_layout Standard
+Es una estructura, generalmente metálica, utilizada en el laboratorio para
+ sujetar elementos que no tienen sustentación propia (como un tubo de ensayo,
+ o una bureta).
+ Se construye con una base rectangular (aunque también existen bases con
+ formas de 
+\emph on
+A
+\emph default
+, 
+\emph on
+H
+\emph default
+, trípodes, etc) y una varilla metálica donde se sujetan pinzas de laboratorio
+ mediante 
+\emph on
+dobles nueces
+\emph default
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Description
+Doble
+\begin_inset space ~
+\end_inset
+
+nuez Es una pieza que posee dos agujeros con dos tornillos opuestos.
+ Uno de los agujeros se utiliza para ajustar la doble nuez (generalmente
+ a un soporte universal), mientras que en la otra se coloca y ajusta la
+ pieza a sujetar.
+\end_layout
+
+\end_inset
+
+.
+ También se utiliza para sujetar elementos de destilación y otros equipos
+ similares más complejos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename soporte_universal.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Soporte universal
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Cristalizador
+\end_layout
+
+\begin_layout Standard
+Un cristalizador es un recipiente de vidrio que se utiliza generalmente
+ para cristalizar el soluto de una solución, por evaporación del solvente.
+ También tiene otros usos como tapa, contenedor, etc.
+ Tiene una base muy ancha y poca estatura para permitir una mayor evaporación
+ del solvente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename cristalizador.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Cristalizador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Embudo
+\end_layout
+
+\begin_layout Standard
+Es un elemento de vidrio que se utiliza, con la ayuda de un papel de filtro
+ para separar sólidos de líquidos a través del proceso de 
+\emph on
+filtración
+\emph default
+.
+ Puede tener distintas formas, tamaños, e incluso distintos materiales de
+ fabricación de acuerdo al uso específico que se le dé.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename embudo_de_filtracion.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Embudo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Gradilla de madera para tubos de ensayo
+\end_layout
+
+\begin_layout Standard
+Es una herramienta utilizada para sostener gran cantidad de tubos de ensayo.
+ Generalmente se construye de madera, aunque también puede ser de plástico
+ o metal.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename gradilla_de_madera.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Gradilla de madera para tubos de ensayo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Tubos de ensayo
+\end_layout
+
+\begin_layout Standard
+Consiste en un pequeño tubo cilíndrico de vidrio con una punta abierta (que
+ puede poseer una tapa) y la otra cerrada y redondeada, que se utiliza en
+ los laboratorios para contener pequeñas muestras líquidas o sólidas, aunque
+ pueden tener otras fases, como reacciones químicas en pequeña escala.
+ Se construyen generalmente de 1 a 2cm de ancho y de 5 a 20cm de largo.
+ Los tubos de ensayo construidos con vidrio resistente a la expansión (como
+ el vidrio borosilicatado
+\begin_inset Foot
+status collapsed
+
+\begin_layout Description
+Vidrio
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+borosilicato Es un tipo particular de vidrio, más conocido con los nombres
+ comerciales de DURAN, Pyrex ó Kimax.
+ Es conocido por su durabilidad y resistencia calórica y química.
+\end_layout
+
+\end_inset
+
+) pueden colocarse directamente sobre la llama de un mechero.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename tubos_de_ensayo.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Tubos de ensayo sobre una gradilla de vidrio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Termómetro
+\end_layout
+
+\begin_layout Standard
+Un termómetro es un instrumento de medición de temperatura.
+ Existen distintos tipos de termómetros de acuerdo al uso que se le dé:
+ medición de temperatura corporal, de radiación, de temperatura de gases,
+ etc.
+ Los más populares son los termómetros construidos de vidrio que contiene
+ una pequeña cantidad de mercurio, cuyo volumen aumenta proporcionalmente
+ con la temperatura.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename termometro.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Termómetro de laboratorio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Pinza de madera para tubos de ensayo
+\end_layout
+
+\begin_layout Standard
+Las pinzas de madera se utilizan para sujetar de forma segura tubos de ensayo.
+ Con estas pinzas se puede transportar un tubo de ensayo desde la gradilla
+ hacia un mechero, y calentarlo sin recibir quemaduras a través de la conductivi
+dad térmica.
+ Se debe tener precaución con el calentamiento del tubo porque la madera
+ es propensa a la combustión.
+ La madera tampoco es resistente a los productos químicos corrosivos (como
+ los 
+\emph on
+ácidos fuertes
+\emph default
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename pinza_de_madera.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Pinza de madera para tubos de ensayo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Pinza para bureta con nuez
+\end_layout
+
+\begin_layout Standard
+Las pinzas para buretas o pinzas 
+\emph on
+Fischer
+\emph default
+ son pinzas específicas para buretas.
+ Poseen una sujeción doble, en dos puntos próximos, impidiendo que la bureta
+ se doble, lo cual puede ocurrir si se sujeta con una pinza de laboratorio
+ gruesa.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename pinza_para_bureta.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Pinza para bureta o pinza 
+\emph on
+Fisher
+\emph default
+ sosteniendo una bureta
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Pipeta
+\end_layout
+
+\begin_layout Standard
+La pipeta es un instrumento volumétrico de laboratorio que permite medir
+ la alícuota de líquido con bastante precisión.
+ Suelen ser de vidrio.
+ Está formada por un tubo transparente que termina en una de sus puntas
+ de forma cónica, y tiene una graduación (una serie de marcas grabadas)
+ con la que se indican distintos volúmenes.
+ Algunas son graduadas o de simple aforo, es decir, se enrasa una vez en
+ los cero mililitros, y luego se deja vaciar hasta el volumen que se necesite;
+ en otras, las denominadas de doble enrase o de doble aforo, se enrasa en
+ la marca o aforo superior y se deja escurrir el líquido con precaución
+ hasta enrasar en el aforo inferior.
+ Si bien poseen la desventaja de medir un volumen fijo de líquido, las pipetas
+ de doble aforo superan en gran medida a las graduadas en que su precisión
+ es mucho mayor, ya que no se modifica el volumen medido si se les rompe
+ o si se deforma la punta cónica.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename pipeta.jpg
+	width 50text%
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Pipeta
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Probeta
+\end_layout
+
+\begin_layout Standard
+La probeta o cilindro graduada es un instrumento volumétrico, hecho de vidrio,
+ que permite medir volúmenes y sirve para contener líquidos.
+ Está formado por un tubo de unos centímetros de diámetro y tiene una graduación
+ desde 0 ml hasta el máximo de la probeta, indicando distintos volúmenes.
+ En la parte inferior está cerrado y posee una base que sirve de apoyo,
+ mientras que la superior está abierta (permite introducir el líquido a
+ medir) y suele tener un pico (permite verter el líquido medido).
+ Generalmente miden volúmenes de 25 o 50ml, pero existen probetas de distintos
+ tamaños; incluso algunas que pueden medir un volumen hasta de 2000ml.
+ Puede estar construida con vidrio o con plástico, de acuerdo al uso específico
+ que se le dé.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename probeta.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Probeta de vidrio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Triángulo de pipas
+\end_layout
+
+\begin_layout Standard
+Es un elemento utilizado para sostener un crisol donde se fundirán metales
+ a más de 500Cº.
+ Está formado por cilindros de hueso o cerámica unidos, en forma de triángulo,
+ con un alambre metálico.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename triangulo_de_pipas.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Triángulo de pipas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Varilla de vidrio
+\end_layout
+
+\begin_layout Standard
+Una varilla de vidrio, agitador de vidrio o varilla agitadora es un instrumento
+ utilizado en los laboratorios de química,consistente en un fino cilindro
+ macizo de vidrio que sirve para agitar disoluciones, con la finalidad de
+ mezclar productos químicos y líquidos en el laboratorio.
+ Suelen ser piezas de unos 5 a 6mm de diámetro, y de 20 a 50cm de longitud.
+ Por lo general son de cristal o vidrio macizo, siendo su forma similar
+ y su grosor un poco mayor que una pajita de refrescos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename varilla_de_vidrio.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Varilla de vidrio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Vaso de precipitados
+\end_layout
+
+\begin_layout Standard
+Un vaso de precipitados o vaso de precipitado es un recipiente cilíndrico
+ de vidrio fino que se utiliza muy comúnmente en el laboratorio, sobre todo,
+ para preparar o calentar sustancias, traspasar líquidos y efectuar precipitacio
+nes.
+ Son cilíndricos con un fondo plano; se les encuentra de varias capacidades,
+ desde 1ml hasta de varios litros.
+ Normalmente son de vidrio o de goma aquéllos cuyo objetivo es contener
+ gases o líquidos.
+ Tienen componentes de teflón u otros materiales resistentes a la corrosión.
+ Suelen estar graduados, pero esta graduación es inexacta por la misma naturalez
+a del artefacto; su forma regular facilita que pequeñas variaciones en la
+ temperatura o incluso en el vertido pasen desapercibidas en la graduación.
+ Es recomendable no utilizarlo para medir volúmenes de sustancias, ya que
+ es un material que se somete a cambios bruscos de temperatura, lo que lo
+ descalibra y en consecuencia nos entrega una medida errónea de la sustancia.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename vaso_de_precipitados.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Vaso de precipitados
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Frasco Enrlenmeyer
+\end_layout
+
+\begin_layout Standard
+El frasco o matraz Enrelenmeyer se utiliza para el armado de aparatos de
+ destilación o para hacer reaccionar sustancias que necesitan un largo calentami
+ento.
+ También sirve para contener líquidos que deben ser conservados durante
+ mucho tiempo.
+ Fue creado en el año 1861 por el químico 
+\noun on
+Richard August Carl Emil Erlenmeyer
+\noun default
+ (1825-1909).
+ Por su forma troncocónica es útil para realizar mezclas por agitación y
+ para la evaporación controlada de líquidos, ya que se evita en gran medida
+ la pérdida del líquido; además, su abertura estrecha permite la utilización
+ de tapones.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename frasco_de_enrelenmeyer.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Frasco o matraz de Enrelenmeyer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Vidrio de reloj
+\end_layout
+
+\begin_layout Standard
+El vidrio de reloj o cristal de reloj es una lámina de vidrio en forma circular
+ cóncava-convexa.
+ Se llama así por su parecido con el vidrio de los antiguos relojes de bolsillo.
+ Se utiliza en química para evaporar líquidos, pesar productos sólidos o
+ como cubierta de vasos de precipitados, y contener sustancias parcialmente
+ corrosivas.
+ Es de tamaño medio y muy delicado.
+ Su utilidad más frecuente es pesar muestras sólidas; aunque también es
+ utilizado para pesar muestras húmedas después de hacer la filtración, es
+ decir, después de haber filtrado el líquido y quedar solo la muestra sólida.
+ El vidrio reloj se utiliza también en ocasiones como tapa de un vaso de
+ precipitados, fundamentalmente para evitar la entrada de polvo, ya que
+ al no ser un cierre hermético se permite el intercambio de gases, utilizado
+ en un laboratorio especial para química, física o biología.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename vidrio_de_reloj.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Vidrio de reloj
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Espátula
+\end_layout
+
+\begin_layout Standard
+Se utiliza para tomar pequeñas cantidades de compuestos que son, básicamente,
+ polvo.
+ Se suele clasificar dentro del material de metal y es común encontrar en
+ recetas técnicas el término punta de espátula para referirse a esa cantidad
+ aproximadamente.
+ Tienen dos curvaturas, una en cada lado, y cada una hacia el lado contrario
+ a la otra.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename espatula.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Espátula
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Bureta
+\end_layout
+
+\begin_layout Standard
+Las buretas son tubos cortos, graduados, de diámetro interno uniforme, dependien
+do del volumen, de décimas de mililitro o menos.
+ Su uso principal se da en volumetrías, debido a la necesidad de medir con
+ precisión volúmenes de líquido variables.
+ Los dos tipos principales de buretas son:
+\end_layout
+
+\begin_layout Description
+
+\emph on
+Buretas
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+Geissler
+\emph default
+ La llave es de vidrio esmerilado; se debe evitar que el líquido esté mucho
+ tiempo en contacto con la bureta, pues determinados líquidos llegan a obstruir,
+ e incluso inmovilizar, este tipo de llaves.
+\end_layout
+
+\begin_layout Description
+Bureta
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+Mohr La llave ha sido sustituida por un tubo de goma con una bola de vidrio
+ en su interior, que actúa como una válvula.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename bureta.png
+	width 50text%
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Bureta
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Mortero
+\end_layout
+
+\begin_layout Standard
+El Mortero tiene como finalidad machacar o triturar las sustancias solidas.
+ Posee un instrumento pequeño creado del mismo material llamado 
+\emph on
+Mano
+\emph default
+ o 
+\emph on
+Pilon
+\emph default
+ y es el encargado del triturado.
+ Normalmente se encuentran hechos en madera, porcelana, piedra o mármol.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename mortero.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Mortero
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Ampolla de decantación
+\end_layout
+
+\begin_layout Standard
+Es un elemento de vidrio que se emplea para separar dos líquidos inmiscibles,
+ es decir, para la separación de fases líquidas de distinta densidad.
+ En la parte superior presenta una embocadura por la que se procede a cargar
+ su interior.
+ En la parte inferior posee un grifo de cierre o llave de paso que permite
+ regular o cortar el flujo de líquido a través del tubo que posee en su
+ extremo más bajo.
+ Funciona aprovechando el proceso de decantación, donde las sustancias de
+ más alta densidad decantan sobre la superficie de la ampolla o embudo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ampolla_de_decantacion.gif
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Ampolla de decantación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Aro para embudo con nuez
+\end_layout
+
+\begin_layout Standard
+Se fija al soporte universal por medio de una llave.
+ Se utiliza para mantener el embudo.
+ La nuez se utiliza para fijar el aro a un soporte universal.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename aro_para_embudo.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Aro para embudo con nuez
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Gotero
+\end_layout
+
+\begin_layout Standard
+Es un tubo hueco terminado en su parte inferior en forma cónica y cerrado
+ por la parte superior por una perilla o dedal de goma.
+ Se utiliza para trasvasar pequeñas cantidades de líquido vertiéndolo gota
+ a gota.
+ En los laboratorios en los que se utilizan productos químicos son muy utilizado
+s para añadir reactivos, líquidos indicadores o pequeñas cantidades de producto.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename gotero.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Gotero
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Pinza para crisol
+\end_layout
+
+\begin_layout Standard
+Las pinzas para crisoles tienen forma de tenazas, o de tijeras grandes con
+ el extremo adaptado para sujetar un crisol mientras se calienta fuertemente.
+ Solo pueden estar construidas en metal, para aguantar temperaturas muy
+ altas, y se necesitan guantes protectores para agarrarlas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename pinza_par_crisol.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Pinza para crisol
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Papel de tornasol
+\end_layout
+
+\begin_layout Standard
+El Papel tornasol o papel pH es utilizado para medir la concentración de
+ Iones Hidrógenos contenido en una sustancia o disolución mediante la escala
+ de pH, la cual es clasificada en distintos colores y tipos.
+ Como resultado se podrá obtener una noción sobre el nivel de pH que contiene
+ una determinada sustancia o disolución.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename papel_de_tornasol.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Papel de tornasol
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Escala de PH
+\end_layout
+
+\begin_layout Description
+1
+\begin_inset space ~
+\end_inset
+
+al
+\begin_inset space ~
+\end_inset
+
+6 Ácido
+\end_layout
+
+\begin_layout Description
+7 Neutro
+\end_layout
+
+\begin_layout Description
+8
+\begin_inset space ~
+\end_inset
+
+al
+\begin_inset space ~
+\end_inset
+
+14 Base
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename escala_papel_de_tornasol.gif
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Escala de pH
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Papel de filtro
+\end_layout
+
+\begin_layout Standard
+El papel de filtros es un papel que se corta en forma circular y se introduce
+ en un embudo de filtración, con el fin de ser filtro para las impurezas
+ insolubles y permitir el paso a la solución a través de sus poros.
+ Existen de diferentes rugosidades y diámetros de poro.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename papel_de_filtro.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Papel de filtro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Cepillo
+\end_layout
+
+\begin_layout Standard
+Es construido con una varilla metálica que en un extremo tiene un mango
+ de madera o metal, y en el otro tiene cerdas metálicas.
+ Es utilizado para limpiar elementos de vidrio, tales como tubos de ensayo
+ o matraz.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename cepillo.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Cepillo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Tubos capilares
+\end_layout
+
+\begin_layout Standard
+Un tubo capilar es una conducción de fluido muy estrecha y de pequeña sección
+ circular.
+ Su nombre se origina por la similitud con el espesor del cabello.
+ Es en estos tubos en los que se manifiestan los fenómenos de capilaridad.
+ Pueden estar hechos de distintos materiales: vidrio, cobre, aleaciones
+ metálicas, etc., en función de su uso o aplicación.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename tubos_capilares.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Tubos capilares
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+Wikipedia, la enciclopedia libre (https://es.wikipedia.org).
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+FullQuimica (http://www.fullquimica.com).
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+TP - Laboratorio Químico (http://tplaboratorioquimico.blogspot.com.ar).
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+Materiales de laboratorio (https://sites.google.com/site/433laboratorio/materiales
+-de-laboratorio-1).
+\end_layout
+
+\end_body
+\end_document

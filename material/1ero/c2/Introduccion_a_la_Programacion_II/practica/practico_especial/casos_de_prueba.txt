@@ -1,0 +1,12 @@
+$Id: casos_de_prueba.txt,v 1.2 2016/01/30 19:06:35 aosorio Exp $
+
+Casos de prueba
+---------------
+
+- Mostrar aplicaciones sin aplicaciones.
+- Mostrar aplicaciones con aplicaciones.
+- Registrar aplicación (normal).
+- Registrar aplicación con datos inválidos.
+- Registrar aplicación preexistente en la misma categoría.
+- Registrar aplicación preexistente en distinta categoría.
+- Registrar aplicación sin indicar categoría.

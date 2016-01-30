@@ -1,0 +1,64 @@
+# $Id: practico1_1.txt,v 1.2 2016/01/30 19:06:34 aosorio Exp $
+#
+# Resolución Práctico 1 - Ejercicio 1
+#
+
+{{{ (A)
+
+procedure abrirArch( var arch : File of Integer;
+                     nombre : String;
+                     var error : Boolean ) ;
+
+- Este procedimiento intenta abrir un archivo existente dado por el usuario. La
+variable de referencia 'error' se fija en TRUE si el archivo puede abrirse o
+FALSE en caso contrario.
+
+function sumarArch(var arch : File of Integer) : Integer;
+
+- Esta función devuelve la suma de todos los valores dentro del archivo (se
+espera tener el archivo abierto).
+
+procedure escribirFinal(var arch : File of Integer; val : Integer);
+
+- Este procedimiento escribe el valor 'val' al final del archivo 'arch'.
+
+VERSIÓN 1: Intenta abrir el archivo y escribir al final del mismo la suma de
+todos sus valores, luego lo cierra. En caso de no poder abrir el archivo se
+muestra un mensaje de error.
+
+VERSIÓN 2: Intenta abrir un archivo dado por el usuario. Si el archivo no puede
+abrirse se muestra un mensaje de error. Sino, se intenta abrir el archivo
+'suma.dat', si no puede abrirse se crea vacío. Luego escribe al final de
+'suma.dat' la suma de todos los valores del archivo dado por el usuario.
+Finalmente cierra los 2 archivos.
+
+}}}
+
+{{{ (B)
+
+  Ejecutando 3 veces la versión 1 (suponiendo que el archivo que el usuario
+ingrese exista y sea siempre 'origen.dat'), el archivo 'origen.dat' cambiará de
+la siguiente manera:
+
+INICIAL | EJECUCIÓN 1 | EJECUCIÓN 2 | EJECUCIÓN 3
+--------+-------------+-------------+------------
+4       | 4           | 4           | 4
+6       | 6           | 6           | 6
+10      | 10          | 10          | 10
+	| 20          | 20          | 20
+	|             | 40          | 40
+	|             |             | 80
+
+  Ejecutando 3 veces la versión 2 (suponiendo que el archivo que el usuario
+ingrese exista y sea siempre 'origen.dat'), el archivo 'suma.dat' cambiará de
+la siguiente manera:
+
+INICIAL   | EJECUCIÓN 1 (a) | EJECUCIÓN 2 | EJECUCIÓN 3
+----------+-----------------+-------------+------------
+No existe | 20              | 20          | 20
+          |                 | 20          | 20
+          |                 |             | 20
+
+(a) En este punto se crea el archivo en blanco.
+
+}}}

@@ -1,0 +1,6 @@
+1-Arrancar la emulacion
+2-Los parametros del link deben ser: 512,00 kbps y dp 50 miliseg
+3-Arrancar en primer termino, en equipo receptor, el receptor con bloques de ack de 1200 bytes:
+  python /receptor.py 1200
+4-Arrancar en equipo emisor, el emisor con bloques de 1200 bytes, timeout de 50 milisegundos y cantidad de bloques a enviar 10:
+  pyton /emisor.py 200 1200 10

@@ -1,0 +1,24 @@
+00:52:11.678580 Enviado bloque_numero 0 - Numero de secuencia 0
+00:52:11.786396 Recibido Ack 00 originado por llegada de bloque 00 Aceptado
+00:52:11.786515 Enviado bloque_numero 1 - Numero de secuencia 1
+00:52:11.889625 Recibido Ack 01 originado por llegada de bloque 01 Aceptado
+00:52:11.889701 Enviado bloque_numero 2 - Numero de secuencia 0
+00:52:11.996911 Recibido Ack 02 originado por llegada de bloque 02 Aceptado
+00:52:11.996994 Enviado bloque_numero 3 - Numero de secuencia 1
+00:52:12.100098 Recibido Ack 03 originado por llegada de bloque 03 Aceptado
+00:52:12.100190 Enviado bloque_numero 4 - Numero de secuencia 0
+00:52:12.206161 Recibido Ack 04 originado por llegada de bloque 04 Aceptado
+00:52:12.206375 Enviado bloque_numero 5 - Numero de secuencia 1
+00:52:12.312724 Recibido Ack 05 originado por llegada de bloque 05 Aceptado
+00:52:12.312878 Enviado bloque_numero 6 - Numero de secuencia 0
+00:52:12.417924 Recibido Ack 06 originado por llegada de bloque 06 Aceptado
+00:52:12.418121 Enviado bloque_numero 7 - Numero de secuencia 1
+00:52:12.527821 Recibido Ack 07 originado por llegada de bloque 07 Aceptado
+00:52:12.527940 Enviado bloque_numero 8 - Numero de secuencia 0
+00:52:12.632963 Recibido Ack 08 originado por llegada de bloque 08 Aceptado
+00:52:12.633112 Enviado bloque_numero 9 - Numero de secuencia 1
+00:52:12.738332 Recibido Ack 09 originado por llegada de bloque 09 Aceptado
+00:52:12.738481 Enviados con exito  10  bloques
+Tiempo total: 0:00:01.059901
+Cantidad de frames originales enviados: 10
+Cantidad de frames reenviados: 10

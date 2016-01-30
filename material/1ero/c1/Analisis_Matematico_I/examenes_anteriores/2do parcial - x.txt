@@ -1,0 +1,24 @@
+2do parcial (no sé de qué año)
+------------------------------
+
+1) Hallar por definición la derivada de f(x) = sqrt(2x - 1) y cuál es su
+valor en x=5.
+
+2) Verificar que si f(x) =   senx    entonces f'(x) =   cosx - 2
+                           ---------                  -------------
+                           1 - 2cosx                  (1 - 2cosx)^2
+
+3) Estudiar intervalos de crecimiento/decrecimiento, máximos y mínimos,
+concavidad y puntos de inflexión de y = 2x^2 - x + 3
+                                        ------------
+                                           x - 3
+
+4) Resolver aplicando L'Hopital lim (cosx)^(1/x^2).
+                                x→0
+
+5) Un granjero tiene 2400 metros de alambre para cerca un terreno por donde
+pasa un río recto. ¿Cuál es el mayor área que puede cercar?
+
+6) Resolver Integral(      6 - x     dx ).
+                      ---------------
+                      (x - 3)(2x + 5)

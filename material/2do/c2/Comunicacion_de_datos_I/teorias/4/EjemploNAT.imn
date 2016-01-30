@@ -1,0 +1,156 @@
+node n3 {
+    type router
+    model router
+    network-config {
+	hostname RT-3
+	!
+	interface eth0
+	 ip address 192.168.0.1/24
+	!
+	interface eth1
+	 ip address 80.10.5.1/30
+	!
+    }
+    canvas c1
+    iconcoords {193.0 74.0}
+    labelcoords {193.0 106.0}
+    services {IPForward UserDefined}
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	cmdup=('ip route add 192.168.25.0/27 via 192.168.25.81 dev eth0', 'ip route add 192.168.25.32/28 via 192.168.25.81 dev eth0', 'ip route add 192.168.25.48/28 via 192.168.25.81 dev eth0', 'ip route add 192.168.25.64/29 via 192.168.25.81 dev eth0', 'ip route add 192.168.25.72/30 via 192.168.25.81 dev eth0', 'ip route add default via 80.10.5.2', 'iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE', )
+	}
+    }
+    interface-peer {eth1 n4}
+    interface-peer {eth0 n11}
+}
+
+node n11 {
+    type router
+    model PC
+    network-config {
+	hostname PC2
+	!
+	interface eth0
+	 ip address 192.168.0.20/24
+	!
+    }
+    canvas c1
+    iconcoords {144.0 219.0}
+    labelcoords {144.0 251.0}
+    interface-peer {eth0 n3}
+}
+
+node n13 {
+    type router
+    model PC
+    network-config {
+	hostname PC1
+	!
+	interface eth0
+	 ip address 198.165.15.2/29
+	!
+    }
+    canvas c1
+    iconcoords {610.0 223.0}
+    labelcoords {610.0 255.0}
+    interface-peer {eth0 n17}
+}
+
+node n4 {
+    type router
+    model router
+    network-config {
+	hostname ISP
+	!
+	interface eth1
+	 ip address 101.20.15.1/30
+	!
+	interface eth0
+	 ip address 80.10.5.2/30
+	!
+    }
+    canvas c1
+    iconcoords {384.0 148.0}
+    labelcoords {384.0 180.0}
+    interface-peer {eth0 n3}
+    interface-peer {eth1 n17}
+    services {IPForward UserDefined}
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	cmdup=('ip route add 80.10.5.0/30 via eth0', 'ip route add 101.20.15.0/30 via eth1', )
+	}
+    }
+}
+
+node n17 {
+    type router
+    model router
+    network-config {
+	hostname RT-4
+	!
+	interface eth1
+	 ip address 198.165.15.1/29
+	!
+	interface eth0
+	 ip address 101.20.15.2/30
+	!
+    }
+    canvas c1
+    iconcoords {557.0 77.0}
+    labelcoords {557.0 109.0}
+    interface-peer {eth0 n4}
+    interface-peer {eth1 n13}
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	cmdup=('iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE', 'ip route add default via 101.20.15.1', )
+	}
+    }
+    services {IPForward UserDefined}
+}
+
+link l7 {
+    nodes {n3 n4}
+    bandwidth 0
+}
+
+link l8 {
+    nodes {n4 n17}
+    bandwidth 0
+}
+
+link l16 {
+    nodes {n17 n13}
+    bandwidth 0
+}
+
+link l1 {
+    nodes {n11 n3}
+    bandwidth 0
+}
+
+canvas c1 {
+    name {Canvas1}
+}
+
+option global {
+    interface_names yes
+    ip_addresses yes
+    ipv6_addresses no
+    node_labels yes
+    link_labels yes
+    show_api no
+    background_images no
+    annotations yes
+    grid yes
+    traffic_start 0
+}
+
+option session {
+}
+

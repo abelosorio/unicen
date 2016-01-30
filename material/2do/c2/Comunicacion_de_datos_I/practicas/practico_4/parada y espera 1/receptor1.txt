@@ -1,0 +1,22 @@
+00:52:11.732917 Recibido bloque numero 00 numero de secuencia 0 se esperaba 0  correcto
+00:52:11.734414 Envia ack 00
+00:52:11.838006 Recibido bloque numero 01 numero de secuencia 1 se esperaba 1  correcto
+00:52:11.838067 Envia ack 01
+00:52:11.942629 Recibido bloque numero 02 numero de secuencia 0 se esperaba 0  correcto
+00:52:11.942826 Envia ack 02
+00:52:12.048362 Recibido bloque numero 03 numero de secuencia 1 se esperaba 1  correcto
+00:52:12.048418 Envia ack 03
+00:52:12.153584 Recibido bloque numero 04 numero de secuencia 0 se esperaba 0  correcto
+00:52:12.153698 Envia ack 04
+00:52:12.260069 Recibido bloque numero 05 numero de secuencia 1 se esperaba 1  correcto
+00:52:12.260179 Envia ack 05
+00:52:12.365143 Recibido bloque numero 06 numero de secuencia 0 se esperaba 0  correcto
+00:52:12.365350 Envia ack 06
+00:52:12.470751 Recibido bloque numero 07 numero de secuencia 1 se esperaba 1  correcto
+00:52:12.470864 Envia ack 07
+00:52:12.580126 Recibido bloque numero 08 numero de secuencia 0 se esperaba 0  correcto
+00:52:12.580300 Envia ack 08
+00:52:12.685752 Recibido bloque numero 09 numero de secuencia 1 se esperaba 1  correcto
+00:52:12.686010 Envia ack 09
+00:53:52.784661 No se recibio bloque en tiempo limite, finaliza el receptor
+Lista de bloques recibidos:-00-01-02-03-04-05-06-07-08-09
