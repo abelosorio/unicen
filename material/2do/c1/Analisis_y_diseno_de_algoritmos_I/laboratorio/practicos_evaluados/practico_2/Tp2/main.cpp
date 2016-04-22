@@ -8,7 +8,7 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    int * arb = NULL;
+    //int * arb = NULL;
     //nodo_lista * frontera = NULL;
 
 //  Se podría solicitar la cadena por consola.
@@ -16,8 +16,8 @@ int main(int argc, char *argv[])
 //  cin >> cad;
 //  cargarArbol(arb, cad.c_str());
 
-    cargar_arbol(arb, "6,10,12,-,-");//,-,1,-,9,5,-,3,-,-,2");
-    mostrar_arbol(arb);
+    //cargar_arbol(arb, "6,10,12,-,-");//,-,1,-,9,5,-,3,-,-,2");
+    //mostrar_arbol(arb);
 
     //construir_frontera(arb, frontera);
     //mostrar_lista(frontera);

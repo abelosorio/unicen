@@ -1,19 +1,12 @@
-//#include "arbol.h"
 #include "arreglo.h"
 #include "lista.h"
 
-#include <climits>
-#include <cmath>
 #include <cstdlib>
 #include <iostream>
+#include <climits>
+#include <cmath>
 
 using namespace std;
-
-void inicializar_arbol(int * & arbol, int tamanio) {
-    for (int i = 0; i <= tamanio; i++) {
-        arbol[i] = INT_MAX;
-    }
-}
 
 int * nuevo_arbol(int tamanio) {
     int * nuevo = new int[tamanio];
@@ -21,6 +14,16 @@ int * nuevo_arbol(int tamanio) {
 
     return nuevo;
 }
+
+void inicializar_arbol(int * & arbol, int tamanio) {
+    for (i = 0; i <= tamanio; i++) {
+        *arbol[i] = INT_MAX;
+    }
+}
+
+//bool es_hoja(int * arbol, int indice) {
+//    return (!(arbol[indice*2] == INT_MAX && arbol[indice*2 + 1] == INT_MAX));
+//}
 
 // Notar que esta función es privada, ya que solo se encuentra definida en el .cpp
 // Leer un valor entero separado por comas. El valor se devuelve en elemento, y el
@@ -57,8 +60,6 @@ int tamanio_cadena(const char * cadena) {
         i += 2;
     }
 
-    cout << "Tamaño cadena: " << tamanio;
-
     return tamanio;
 }
 
@@ -69,70 +70,22 @@ int tamanio_arbol(const char * cadena) {
     return pow(2, tamanio_cadena(cadena));
 }
 
-/* Función pública de carga de árbol.
- */
-void cargar_arbol(int * & arb, const char * cadena) {
-    int * nuevo = NULL;
-    nuevo = nuevo_arbol(tamanio_arbol(cadena));
-    return;
-    //arb = & nuevo;
-
-    //cargar_arbol(arb, cadena, 0, 1);
-}
-
 void cargar_arbol(int * & arb, const char * cadena, int pos_cadena, int pos_arbol) {
     if (cadena != '\0') {
         if (cadena[pos_cadena] != '-') {
-            int elemento;
             leer_valor(cadena, pos_cadena, elemento);
-            arb[pos_arbol] = elemento;
+            *arb[pos_arbol] = elemento;
             cargar_arbol(arb, cadena, pos_cadena + 1, pos_arbol*2);
             cargar_arbol(arb, cadena, pos_cadena + 2, pos_arbol*2 + 1);
         }
     }
 }
 
-void mostrar_arbol(int * arb) {
-    for (int i = 0; i <= 8; i++) {
-      cout << i << ": " << arb[i] << endl;
-    }
+void cargar_arbol(int * & arb, const char * cadena) {
+    *arb = nuevo_arbol(tamanio_arbol(tamanio_cadena(cadena));
+    cargar_arbol(arb, cadena, 0, 1);
 }
 
-//nodo_arbol * nuevo_arbol(int elemento, nodo_arbol * izq, nodo_arbol * der) {
-//    nodo_arbol * nuevo = new nodo_arbol;
-//    nuevo->elemento = elemento;
-//    nuevo->izq = izq;
-//    nuevo->der = der;
-//    return nuevo;
-//}
-//
-//bool es_hoja(nodo_arbol * arb) {
-//    if ((arb->izq == NULL) && (arb->der == NULL))
-//        return true;
-//    else
-//        return false;
-//}
-//
-
-//void cargar_arbol(nodo_arbol * & arb, const char * cadena, int & i) {
-//    if (cadena[i] != '\0') {
-//        if (cadena[i] != '-') {
-//            int elemento;
-//            leer_valor(cadena, i, elemento);
-//            arb = nuevo_arbol(elemento, NULL, NULL);
-//            cargar_arbol(arb->izq, cadena, i);
-//            cargar_arbol(arb->der, cadena, i);
-//        } else
-//            i += 2;
-//    }
-//}
-//
-//void cargar_arbol(nodo_arbol * & arb, const char * cadena) {
-//    int i = 0;
-//    cargar_arbol(arb, cadena, i);
-//}
-//
-//
 //void mostrar_nivel(nodo_arbol * arb, int nivel, int actual, bool & existe) {
 //    if (arb == NULL) {
 //        if (actual < nivel)
@@ -149,7 +102,13 @@ void mostrar_arbol(int * arb) {
 //        }
 //    }
 //}
-//
+
+void mostrar_arbol(int * arb) {
+    for (i = 0; i <= 8) {
+      cout << i << ": " << *arb[i] << endl;
+    }
+}
+
 //void mostrar_arbol(nodo_arbol * arb) {
 //    int i = 0;
 //    bool cont = true;
@@ -160,7 +119,7 @@ void mostrar_arbol(int * arb) {
 //        i++;
 //    }
 //}
-//
+
 //void vaciar_arbol(nodo_arbol * & arb) {
 //    if (arb != NULL) {
 //        vaciar_arbol(arb->izq);

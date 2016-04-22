@@ -48,16 +48,14 @@ void leer_valor(const char * cadena, int & i, int & elemento) {
  */
 int tamanio_cadena(const char * cadena) {
     int i = 0;
-    int tamanio = 1;
+    int tamanio = 0;
 
     while (cadena[i] != '\0') {
-        if (cadena[i] != '-') {
+        if ((cadena[i] != '-') && cadena[i] != ',') {
             tamanio++;
         }
-        i += 2;
+        i ++;
     }
-
-    cout << "Tamaño cadena: " << tamanio;
 
     return tamanio;
 }
@@ -69,28 +67,34 @@ int tamanio_arbol(const char * cadena) {
     return pow(2, tamanio_cadena(cadena));
 }
 
-/* Función pública de carga de árbol.
- */
-void cargar_arbol(int * & arb, const char * cadena) {
-    int * nuevo = NULL;
-    nuevo = nuevo_arbol(tamanio_arbol(cadena));
-    return;
-    //arb = & nuevo;
-
-    //cargar_arbol(arb, cadena, 0, 1);
-}
-
-void cargar_arbol(int * & arb, const char * cadena, int pos_cadena, int pos_arbol) {
-    if (cadena != '\0') {
+void cargar_arbol(int * & arb, const char * cadena, int & pos_cadena, int pos_arbol) {
+    if (cadena[pos_cadena] != '\0') {
         if (cadena[pos_cadena] != '-') {
             int elemento;
             leer_valor(cadena, pos_cadena, elemento);
+            //cout << "Cargando " << elemento << " en " << pos_arbol << endl;
             arb[pos_arbol] = elemento;
-            cargar_arbol(arb, cadena, pos_cadena + 1, pos_arbol*2);
-            cargar_arbol(arb, cadena, pos_cadena + 2, pos_arbol*2 + 1);
+            cargar_arbol(arb, cadena, pos_cadena, pos_arbol*2);
+            cargar_arbol(arb, cadena, pos_cadena, pos_arbol*2 + 1);
+        } else {
+            pos_cadena += 2;
         }
     }
 }
+
+/* Función pública de carga de árbol.
+ */
+void cargar_arbol(int * & arb, const char * cadena) {
+    int * nuevo    = NULL;
+    int pos_cadena = 0;
+
+    nuevo = nuevo_arbol(tamanio_arbol(cadena));
+
+    arb = nuevo;
+
+    cargar_arbol(arb, cadena, pos_cadena, 1);
+}
+
 
 void mostrar_arbol(int * arb) {
     for (int i = 0; i <= 8; i++) {

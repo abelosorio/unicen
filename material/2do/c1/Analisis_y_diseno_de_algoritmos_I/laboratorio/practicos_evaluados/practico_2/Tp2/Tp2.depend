@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1461356171 source:c:\users\abel\copiastrabajo\unicen\material\2do\c1\analisis_y_diseno_de_algoritmos_i\laboratorio\practicos_evaluados\practico_2\tp2\arbol.cpp
+	"arreglo.h"
+	"lista.h"
+	<climits>
+	<cmath>
+	<cstdlib>
+	<iostream>
+
+1461283427 c:\users\abel\copiastrabajo\unicen\material\2do\c1\analisis_y_diseno_de_algoritmos_i\laboratorio\practicos_evaluados\practico_2\tp2\arreglo.h
+
+1461283427 c:\users\abel\copiastrabajo\unicen\material\2do\c1\analisis_y_diseno_de_algoritmos_i\laboratorio\practicos_evaluados\practico_2\tp2\lista.h
+
+1461283427 source:c:\users\abel\copiastrabajo\unicen\material\2do\c1\analisis_y_diseno_de_algoritmos_i\laboratorio\practicos_evaluados\practico_2\tp2\lista.cpp
+	"lista.h"
+	<iostream>
+
+1461356205 source:c:\users\abel\copiastrabajo\unicen\material\2do\c1\analisis_y_diseno_de_algoritmos_i\laboratorio\practicos_evaluados\practico_2\tp2\main.cpp
+	"arreglo.h"
+	"lista.h"
+	<iostream>
+
