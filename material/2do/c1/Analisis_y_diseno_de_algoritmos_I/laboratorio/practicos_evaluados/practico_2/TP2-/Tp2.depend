@@ -1,13 +1,15 @@
 # depslib dependency file v1.0
-1461360570 source:c:\users\abel\copiastrabajo\unicen\material\2do\c1\analisis_y_diseno_de_algoritmos_i\laboratorio\practicos_evaluados\practico_2\tp2-\arbol.cpp
-	"arreglo.h"
+1461624199 source:c:\users\abel\copiastrabajo\unicen\material\2do\c1\analisis_y_diseno_de_algoritmos_i\laboratorio\practicos_evaluados\practico_2\tp2-\arbol.cpp
+	"arbol.h"
 	"lista.h"
 	<climits>
 	<cmath>
 	<cstdlib>
 	<iostream>
+	<string>
 
-1461283427 c:\users\abel\copiastrabajo\unicen\material\2do\c1\analisis_y_diseno_de_algoritmos_i\laboratorio\practicos_evaluados\practico_2\tp2-\arreglo.h
+1461363132 c:\users\abel\copiastrabajo\unicen\material\2do\c1\analisis_y_diseno_de_algoritmos_i\laboratorio\practicos_evaluados\practico_2\tp2-\arbol.h
+	"lista.h"
 
 1461283427 c:\users\abel\copiastrabajo\unicen\material\2do\c1\analisis_y_diseno_de_algoritmos_i\laboratorio\practicos_evaluados\practico_2\tp2-\lista.h
 
@@ -15,8 +17,8 @@
 	"lista.h"
 	<iostream>
 
-1461360107 source:c:\users\abel\copiastrabajo\unicen\material\2do\c1\analisis_y_diseno_de_algoritmos_i\laboratorio\practicos_evaluados\practico_2\tp2-\main.cpp
-	"arreglo.h"
+1461624799 source:c:\users\abel\copiastrabajo\unicen\material\2do\c1\analisis_y_diseno_de_algoritmos_i\laboratorio\practicos_evaluados\practico_2\tp2-\main.cpp
+	"arbol.h"
 	"lista.h"
 	<iostream>
 

@@ -1,16 +1,18 @@
-//#include "arbol.h"
-#include "arreglo.h"
+#include "arbol.h"
 #include "lista.h"
 
 #include <climits>
 #include <cmath>
 #include <cstdlib>
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 void inicializar_arbol(int * & arbol, int tamanio) {
-    for (int i = 0; i <= tamanio; i++) {
+    arbol[0] = tamanio;
+
+    for (int i = 1; i <= tamanio; i++) {
         arbol[i] = INT_MAX;
     }
 }
@@ -43,18 +45,45 @@ void leer_valor(const char * cadena, int & i, int & elemento) {
         i++;
 }
 
-/* Función para calcular el tamaño de la cadena de entrada de valores
- * del árbol.
+/* Función para determinar la posición del último elemento
+ * de la cadena.
+ */
+int ultimo_elemento(const char * cadena) {
+    int i   = 0;
+    int pos = 0;
+
+    while (cadena[i] != '\0') {
+        if (cadena[i] != '-') {
+            int elemento;
+            leer_valor(cadena, i, elemento);
+            if (elemento != '\0') {
+                pos++;
+            }
+        } else {
+            i += 2;
+            pos++;
+        }
+    }
+
+    return pos;
+}
+
+/* Función para determinar el tamaño de la cadena.
  */
 int tamanio_cadena(const char * cadena) {
-    int i = 0;
+    int i       = 0;
     int tamanio = 0;
 
     while (cadena[i] != '\0') {
-        if ((cadena[i] != '-') && cadena[i] != ',') {
-            tamanio++;
+        if (cadena[i] != '-') {
+            int elemento;
+            leer_valor(cadena, i, elemento);
+            if (elemento != '\0') {
+                tamanio++;
+            }
+        } else {
+            i += 2;
         }
-        i ++;
     }
 
     return tamanio;
@@ -64,18 +93,21 @@ int tamanio_cadena(const char * cadena) {
  * de entrada.
  */
 int tamanio_arbol(const char * cadena) {
+    // El tamaño total del árbol se calcula como 2 elevado a la cantidad
+    // de niveles que tenga el árbol.
     return pow(2, tamanio_cadena(cadena));
 }
 
+/* Función privada de carga de árbol.
+ */
 void cargar_arbol(int * & arb, const char * cadena, int & pos_cadena, int pos_arbol) {
     if (cadena[pos_cadena] != '\0') {
         if (cadena[pos_cadena] != '-') {
             int elemento;
             leer_valor(cadena, pos_cadena, elemento);
-            //cout << "Cargando " << elemento << " en " << pos_arbol << endl;
             arb[pos_arbol] = elemento;
-            cargar_arbol(arb, cadena, pos_cadena, pos_arbol*2);
-            cargar_arbol(arb, cadena, pos_cadena, pos_arbol*2 + 1);
+            cargar_arbol(arb, cadena, pos_cadena, pos_arbol * 2);
+            cargar_arbol(arb, cadena, pos_cadena, pos_arbol * 2 + 1);
         } else {
             pos_cadena += 2;
         }
@@ -85,102 +117,162 @@ void cargar_arbol(int * & arb, const char * cadena, int & pos_cadena, int pos_ar
 /* Función pública de carga de árbol.
  */
 void cargar_arbol(int * & arb, const char * cadena) {
-    int * nuevo    = NULL;
     int pos_cadena = 0;
 
-    nuevo = nuevo_arbol(tamanio_arbol(cadena));
-
-    arb = nuevo;
-
+    arb = nuevo_arbol(tamanio_arbol(cadena) + 1);
     cargar_arbol(arb, cadena, pos_cadena, 1);
 }
 
-
-void mostrar_arbol(int * arb) {
-    for (int i = 0; i <= 8; i++) {
-      cout << i << ": " << arb[i] << endl;
+/* Función para imprimir n veces un string.
+ */
+void imprimir_n(string cadena, int repeticiones) {
+    for (int i = 1; i <= repeticiones; i++) {
+        cout << cadena;
     }
 }
 
-//nodo_arbol * nuevo_arbol(int elemento, nodo_arbol * izq, nodo_arbol * der) {
-//    nodo_arbol * nuevo = new nodo_arbol;
-//    nuevo->elemento = elemento;
-//    nuevo->izq = izq;
-//    nuevo->der = der;
-//    return nuevo;
-//}
-//
-//bool es_hoja(nodo_arbol * arb) {
-//    if ((arb->izq == NULL) && (arb->der == NULL))
-//        return true;
-//    else
-//        return false;
-//}
-//
+/* Función para mostrar un nivel del árbol.
+ */
+void mostrar_nivel(int * arb, int nivel, int prefijo, int espacios, int cifras) {
+    char espacio = ' ';
+    char vacio   = 'X';
+    char sep     = '-';
 
-//void cargar_arbol(nodo_arbol * & arb, const char * cadena, int & i) {
-//    if (cadena[i] != '\0') {
-//        if (cadena[i] != '-') {
-//            int elemento;
-//            leer_valor(cadena, i, elemento);
-//            arb = nuevo_arbol(elemento, NULL, NULL);
-//            cargar_arbol(arb->izq, cadena, i);
-//            cargar_arbol(arb->der, cadena, i);
-//        } else
-//            i += 2;
-//    }
-//}
-//
-//void cargar_arbol(nodo_arbol * & arb, const char * cadena) {
-//    int i = 0;
-//    cargar_arbol(arb, cadena, i);
-//}
-//
-//
-//void mostrar_nivel(nodo_arbol * arb, int nivel, int actual, bool & existe) {
-//    if (arb == NULL) {
-//        if (actual < nivel)
-//            existe = false;
-//        else
-//            cout << " - ";
-//    } else {
-//        if (actual == nivel) {
-//            cout << arb->elemento << " ";
-//            existe = true;
-//        } else {
-//            mostrar_nivel(arb->izq, nivel, actual+1, existe);
-//            mostrar_nivel(arb->der, nivel, actual+1, existe);
-//        }
-//    }
-//}
-//
-//void mostrar_arbol(nodo_arbol * arb) {
-//    int i = 0;
-//    bool cont = true;
-//    while (cont) {
-//        cout << "Nivel " << i << ":  ";
-//        mostrar_nivel(arb, i, 0, cont);
-//        cout << endl;
-//        i++;
-//    }
-//}
-//
-//void vaciar_arbol(nodo_arbol * & arb) {
-//    if (arb != NULL) {
-//        vaciar_arbol(arb->izq);
-//        vaciar_arbol(arb->der);
-//        delete arb;
-//        arb = NULL;
-//    }
-//}
-//
-//void construir_frontera(nodo_arbol * arb, nodo_lista * & l) {
-//    if (arb != NULL) {
-//        if (es_hoja(arb))
-//            agregar_final(l, arb->elemento);
-//        else {
-//            construir_frontera(arb->izq, l);
-//            construir_frontera(arb->der, l);
-//        }
-//    }
-//}
+    imprimir_n(string(cifras, espacio), prefijo);
+
+    for (int j = pow(2, nivel - 1); j <= pow(2, nivel) - 1; j++) {
+        if (arb[j] == INT_MAX) {
+            // Si no hay un valor en esta posición, imprimir el caracter
+            // que indica vacío.
+            cout << string(cifras, vacio);
+        } else {
+            // Sino imprimir el caracter.
+            cout << arb[j];
+        }
+
+        // Si la posición es par, imprimir el separador de hermanos.
+        // Sino, tabular con espacios.
+        if (j % 2 == 0) {
+            imprimir_n(string(cifras, sep), espacios);
+        } else {
+            imprimir_n(string(cifras, espacio), espacios);
+        }
+    }
+
+    cout << endl;
+}
+
+/* Función para encontrar el valor máximo en el árbol.
+ * Como los elementos del árbol no presentan ningún tipo de orden en este caso,
+ * deberemos recorrer todos los elementos del mismo.
+ */
+int elemento_maximo(int * arb) {
+    int maximo = 0;
+
+    for (int i = 1; i <= arb[0]; i++) {
+        if ((arb[i] != INT_MAX) && (arb[i] > maximo)) {
+            maximo = arb[i];
+        }
+    }
+
+    return maximo;
+}
+
+/* Función para calcular la cantidad de niveles que tiene el árbol, tomando
+ * como entrada la representación final (arreglo).
+ */
+int niveles_arbol(int * arb) {
+     // Se inicializa en 1 para que no falle el log2().
+    int ultimo = 1;
+
+    for (int i = 1; i < arb[0]; i++) {
+        if (arb[i] != INT_MAX) {
+            ultimo = i;
+        }
+    }
+
+    return log2(ultimo) + 1;
+ }
+
+/* Función para mostrar el árbol.
+ */
+void mostrar_arbol(int * arb) {
+    int prefijo  = 0;
+    int espacios = 0;
+    int niveles  = niveles_arbol(arb);
+    // Cantidad de cifras que tiene, como máximo, un elemento del árbol.
+    int cifras   = log10(elemento_maximo(arb)) + 1;
+
+    for (int i = 1; i <= niveles; i++) {
+        prefijo = pow(2, niveles - i) - 1;
+        espacios = pow(2, niveles - i + 1) - 1;
+        mostrar_nivel(arb, i, prefijo, espacios, cifras);
+    }
+}
+
+/* Función para vaciar la memoria ocupada por el árbol.
+ */
+void vaciar_arbol(int * & arb) {
+    delete [] arb;
+}
+
+/* Función para determinar si un elemento del árbol es hoja.
+ */
+bool es_hoja(int * arb, int elemento) {
+    // Un elemento vacío no es considerado hoja.
+    if (arb[elemento] == INT_MAX) {
+        return false;
+    }
+
+    // Si las ramas del elemento están fuera del arreglo, entonces el elemento
+    // es hoja.
+    if (elemento * 2 > arb[0]) {
+        return true;
+    }
+
+    return ((arb[elemento * 2] == INT_MAX) && ((elemento * 2 + 1) > arb[0] || arb[elemento * 2 + 1] == INT_MAX));
+}
+
+/* Función privada para construir la frontera del árbol.
+ */
+void construir_frontera(int * arb, nodo_lista * & l, int elemento) {
+    if (!((arb[elemento] == INT_MAX) || elemento > arb[0])) {
+        if (es_hoja(arb, elemento)) {
+            agregar_final(l, arb[elemento]);
+        } else {
+            construir_frontera(arb, l, elemento * 2);
+            construir_frontera(arb, l, elemento * 2 + 1);
+        }
+    }
+}
+
+/* Función pública para construir la frontera del árbol en una lista.
+ */
+void construir_frontera(int * arb, nodo_lista * & l) {
+    construir_frontera(arb, l, 1);
+}
+
+void maxima_diferencia_hojas_adyacentes(int * arb, int actual, int & anterior, int & diferencia) {
+    if (!((arb[actual] == INT_MAX) || actual > arb[0])) {
+        if (es_hoja(arb, actual)) {
+            if ((anterior != INT_MAX) && (abs(anterior - arb[actual]) > diferencia)) {
+                diferencia = abs(anterior - arb[actual]);
+            }
+            anterior = arb[actual];
+        } else {
+            maxima_diferencia_hojas_adyacentes(arb, actual * 2, anterior, diferencia);
+            maxima_diferencia_hojas_adyacentes(arb, actual * 2 + 1, anterior, diferencia);
+        }
+    }
+}
+
+/* Función pública para calcular la máxima diferencia entre dos hojas
+ * adyacentes.
+ */
+int maxima_diferencia_hojas_adyacentes(int * arb) {
+    int diferencia = 0;
+    int anterior   = INT_MAX;
+
+    maxima_diferencia_hojas_adyacentes(arb, 1, anterior, diferencia);
+    return diferencia;
+}
