@@ -1,0 +1,341 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Trabajo práctico especial - Primera parte
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Integrantes
+\end_layout
+
+\begin_layout Description
+Nombre
+\begin_inset space ~
+\end_inset
+
+y
+\begin_inset space ~
+\end_inset
+
+apellido: Abel Matías Osorio.
+\end_layout
+
+\begin_layout Description
+Correo
+\begin_inset space ~
+\end_inset
+
+electrónico: abel.m.osorio@gmail.com.
+\end_layout
+
+\begin_layout Description
+Número
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+grupo:
+\end_layout
+
+\begin_layout Description
+Ayudante:
+\end_layout
+
+\begin_layout Section*
+Especificación formal en 
+\noun on
+Nereus
+\end_layout
+
+\begin_layout Subsection*
+TDA 
+\begin_inset Quotes eld
+\end_inset
+
+Fila
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\normalsize\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+CLASS Fila [Elemento]
+\end_layout
+
+\begin_layout Plain Layout
+
+  IMPORTS Nat
+\end_layout
+
+\begin_layout Plain Layout
+
+  BASIC CONSTRUCTORS inicLista, agregarLista
+\end_layout
+
+\begin_layout Plain Layout
+
+  EFFECTIVE
+\end_layout
+
+\begin_layout Plain Layout
+
+    TYPE Lista
+\end_layout
+
+\begin_layout Plain Layout
+
+    OPERATIONS
+\end_layout
+
+\begin_layout Plain Layout
+
+      inicLista: -> Lista;
+\end_layout
+
+\begin_layout Plain Layout
+
+      longLista: Lista -> Nat;
+\end_layout
+
+\begin_layout Plain Layout
+
+      agregarLista: Lista(l) * Nat(i) * Elemento -> Lista
+\end_layout
+
+\begin_layout Plain Layout
+
+        pre: (i >= 1) and (i <= longLista(l) + 1);
+\end_layout
+
+\begin_layout Plain Layout
+
+      eliminarLista: Lista(l) * Nat(i) -> Lista
+\end_layout
+
+\begin_layout Plain Layout
+
+        pre: (i >= 1) and (i <= longLista(l));
+\end_layout
+
+\begin_layout Plain Layout
+
+      recuperarLista: Lista(l) * Integer(i) -> Elemento
+\end_layout
+
+\begin_layout Plain Layout
+
+        pre: (i >= 1) and (i <= longLista(l));
+\end_layout
+
+\begin_layout Plain Layout
+
+END-CLASS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+TDA 
+\begin_inset Quotes eld
+\end_inset
+
+Arbol
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\normalsize\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+CLASS Arbin [Elemento]
+\end_layout
+
+\begin_layout Plain Layout
+
+  BASIC CONSTRUCTORS inicArbin, crearArbin
+\end_layout
+
+\begin_layout Plain Layout
+
+  EFFECTIVE
+\end_layout
+
+\begin_layout Plain Layout
+
+    TYPE Arbin
+\end_layout
+
+\begin_layout Plain Layout
+
+    OPERATIONS
+\end_layout
+
+\begin_layout Plain Layout
+
+      inicArbin: -> Arbin;
+\end_layout
+
+\begin_layout Plain Layout
+
+      crearArbin: Arbin * Arbin * Elemento -> Arbin;
+\end_layout
+
+\begin_layout Plain Layout
+
+      vacioArbin: Arbin -> Boolean;
+\end_layout
+
+\begin_layout Plain Layout
+
+      raiz: Arbin(t) -> Elemento
+\end_layout
+
+\begin_layout Plain Layout
+
+        pre: not vacioArbin(t);
+\end_layout
+
+\begin_layout Plain Layout
+
+      subIzquierdo: Arbin(t) -> Arbin
+\end_layout
+
+\begin_layout Plain Layout
+
+        pre: not vacioArbin(t);
+\end_layout
+
+\begin_layout Plain Layout
+
+      subDerecho: Arbin(t) -> Arbin
+\end_layout
+
+\begin_layout Plain Layout
+
+        pre: not vacioArbin(t);
+\end_layout
+
+\begin_layout Plain Layout
+
+END-CLASS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

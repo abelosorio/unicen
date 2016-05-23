@@ -24,9 +24,9 @@ int * nuevo_arbol(int tamanio) {
     return nuevo;
 }
 
-// Notar que esta funci贸n es privada, ya que solo se encuentra definida en el .cpp
+// Notar que esta funci髇 es privada, ya que solo se encuentra definida en el .cpp
 // Leer un valor entero separado por comas. El valor se devuelve en elemento, y el
-// 铆ndice i es adelantado al caracter despu茅s de la coma.
+// 韓dice i es adelantado al caracter despu閟 de la coma.
 void leer_valor(const char * cadena, int & i, int & elemento) {
     char num[255];
     int l = 0;
@@ -45,7 +45,7 @@ void leer_valor(const char * cadena, int & i, int & elemento) {
         i++;
 }
 
-/* Funci贸n para determinar la posici贸n del 煤ltimo elemento
+/* Funci髇 para determinar la posici髇 del 鷏timo elemento
  * de la cadena.
  */
 int ultimo_elemento(const char * cadena) {
@@ -68,7 +68,7 @@ int ultimo_elemento(const char * cadena) {
     return pos;
 }
 
-/* Funci贸n para determinar el tama帽o de la cadena.
+/* Funci髇 para determinar el tama駉 de la cadena.
  */
 int tamanio_cadena(const char * cadena) {
     int i       = 0;
@@ -89,16 +89,16 @@ int tamanio_cadena(const char * cadena) {
     return tamanio;
 }
 
-/* Funci贸n para calcular el tama帽o total del 谩rbol en base a la cadena
+/* Funci髇 para calcular el tama駉 total del 醨bol en base a la cadena
  * de entrada.
  */
 int tamanio_arbol(const char * cadena) {
-    // El tama帽o total del 谩rbol se calcula como 2 elevado a la cantidad
-    // de niveles que tenga el 谩rbol.
+    // El tama駉 total del 醨bol se calcula como 2 elevado a la cantidad
+    // de niveles que tenga el 醨bol.
     return pow(2, tamanio_cadena(cadena));
 }
 
-/* Funci贸n privada de carga de 谩rbol.
+/* Funci髇 privada de carga de 醨bol.
  */
 void cargar_arbol(int * & arb, const char * cadena, int & pos_cadena, int pos_arbol) {
     if (cadena[pos_cadena] != '\0') {
@@ -114,7 +114,7 @@ void cargar_arbol(int * & arb, const char * cadena, int & pos_cadena, int pos_ar
     }
 }
 
-/* Funci贸n p煤blica de carga de 谩rbol.
+/* Funci髇 p鷅lica de carga de 醨bol.
  */
 void cargar_arbol(int * & arb, const char * cadena) {
     int pos_cadena = 0;
@@ -123,7 +123,7 @@ void cargar_arbol(int * & arb, const char * cadena) {
     cargar_arbol(arb, cadena, pos_cadena, 1);
 }
 
-/* Funci贸n para imprimir n veces un string.
+/* Funci髇 para imprimir n veces un string.
  */
 void imprimir_n(string cadena, int repeticiones) {
     for (int i = 1; i <= repeticiones; i++) {
@@ -131,7 +131,7 @@ void imprimir_n(string cadena, int repeticiones) {
     }
 }
 
-/* Funci贸n para mostrar un nivel del 谩rbol.
+/* Funci髇 para mostrar un nivel del 醨bol.
  */
 void mostrar_nivel(int * arb, int nivel, int prefijo, int espacios, int cifras) {
     char espacio = ' ';
@@ -142,15 +142,15 @@ void mostrar_nivel(int * arb, int nivel, int prefijo, int espacios, int cifras) 
 
     for (int j = pow(2, nivel - 1); j <= pow(2, nivel) - 1; j++) {
         if (arb[j] == INT_MAX) {
-            // Si no hay un valor en esta posici贸n, imprimir el caracter
-            // que indica vac铆o.
+            // Si no hay un valor en esta posici髇, imprimir el caracter
+            // que indica vac韔.
             cout << string(cifras, vacio);
         } else {
             // Sino imprimir el caracter.
             cout << arb[j];
         }
 
-        // Si la posici贸n es par, imprimir el separador de hermanos.
+        // Si la posici髇 es par, imprimir el separador de hermanos.
         // Sino, tabular con espacios.
         if (j % 2 == 0) {
             imprimir_n(string(cifras, sep), espacios);
@@ -162,8 +162,8 @@ void mostrar_nivel(int * arb, int nivel, int prefijo, int espacios, int cifras) 
     cout << endl;
 }
 
-/* Funci贸n para encontrar el valor m谩ximo en el 谩rbol.
- * Como los elementos del 谩rbol no presentan ning煤n tipo de orden en este caso,
+/* Funci髇 para encontrar el valor m醲imo en el 醨bol.
+ * Como los elementos del 醨bol no presentan ning鷑 tipo de orden en este caso,
  * deberemos recorrer todos los elementos del mismo.
  */
 int elemento_maximo(int * arb) {
@@ -178,11 +178,12 @@ int elemento_maximo(int * arb) {
     return maximo;
 }
 
-/* Funci贸n para calcular la cantidad de niveles que tiene el 谩rbol, tomando
- * como entrada la representaci贸n final (arreglo).
+/* Funci髇 para calcular la cantidad de niveles que tiene el 醨bol, tomando
+ * como entrada la representaci髇 final (arreglo).
  */
 int niveles_arbol(int * arb) {
-     // Se inicializa en 1 para que no falle el log2().
+    // Se inicializa en 1 para que no falle el log2() en caso de no entrar
+    // nunca en el if.
     int ultimo = 1;
 
     for (int i = 1; i < arb[0]; i++) {
@@ -194,14 +195,20 @@ int niveles_arbol(int * arb) {
     return log2(ultimo) + 1;
  }
 
-/* Funci贸n para mostrar el 谩rbol.
+/* Funci髇 para mostrar el 醨bol.
  */
 void mostrar_arbol(int * arb) {
+    // Cantidad de espacios a la izquierda de los elementos del nivel.
     int prefijo  = 0;
+    // Cantidad de espacios entre elementos de un nivel.
     int espacios = 0;
     int niveles  = niveles_arbol(arb);
-    // Cantidad de cifras que tiene, como m谩ximo, un elemento del 谩rbol.
-    int cifras   = log10(elemento_maximo(arb)) + 1;
+    int maximo   = elemento_maximo(arb);
+    // Cantidad de cifras que tiene, como m醲imo, un elemento del 醨bol.
+    int cifras;
+
+    // Si el elemento m醲imo es 0 no se ejecuta el log10().
+    cifras = (maximo == 0) ? 1 : log10(elemento_maximo(arb)) + 1;
 
     for (int i = 1; i <= niveles; i++) {
         prefijo = pow(2, niveles - i) - 1;
@@ -210,21 +217,21 @@ void mostrar_arbol(int * arb) {
     }
 }
 
-/* Funci贸n para vaciar la memoria ocupada por el 谩rbol.
+/* Funci髇 para vaciar la memoria ocupada por el 醨bol.
  */
 void vaciar_arbol(int * & arb) {
     delete [] arb;
 }
 
-/* Funci贸n para determinar si un elemento del 谩rbol es hoja.
+/* Funci髇 para determinar si un elemento del 醨bol es hoja.
  */
 bool es_hoja(int * arb, int elemento) {
-    // Un elemento vac铆o no es considerado hoja.
+    // Un elemento vac韔 no es considerado hoja.
     if (arb[elemento] == INT_MAX) {
         return false;
     }
 
-    // Si las ramas del elemento est谩n fuera del arreglo, entonces el elemento
+    // Si las ramas del elemento est醤 fuera del arreglo, entonces el elemento
     // es hoja.
     if (elemento * 2 > arb[0]) {
         return true;
@@ -233,7 +240,7 @@ bool es_hoja(int * arb, int elemento) {
     return ((arb[elemento * 2] == INT_MAX) && ((elemento * 2 + 1) > arb[0] || arb[elemento * 2 + 1] == INT_MAX));
 }
 
-/* Funci贸n privada para construir la frontera del 谩rbol.
+/* Funci髇 privada para construir la frontera del 醨bol.
  */
 void construir_frontera(int * arb, nodo_lista * & l, int elemento) {
     if (!((arb[elemento] == INT_MAX) || elemento > arb[0])) {
@@ -246,12 +253,15 @@ void construir_frontera(int * arb, nodo_lista * & l, int elemento) {
     }
 }
 
-/* Funci贸n p煤blica para construir la frontera del 谩rbol en una lista.
+/* Funci髇 p鷅lica para construir la frontera del 醨bol en una lista.
  */
 void construir_frontera(int * arb, nodo_lista * & l) {
     construir_frontera(arb, l, 1);
 }
 
+/* Funci髇 privada para calcular la m醲ima diferencia (en valor absoluto) entre
+ * dos hojas adyacentes.
+ */
 void maxima_diferencia_hojas_adyacentes(int * arb, int actual, int & anterior, int & diferencia) {
     if (!((arb[actual] == INT_MAX) || actual > arb[0])) {
         if (es_hoja(arb, actual)) {
@@ -266,7 +276,7 @@ void maxima_diferencia_hojas_adyacentes(int * arb, int actual, int & anterior, i
     }
 }
 
-/* Funci贸n p煤blica para calcular la m谩xima diferencia entre dos hojas
+/* Funci髇 p鷅lica para calcular la m醲ima diferencia entre dos hojas
  * adyacentes.
  */
 int maxima_diferencia_hojas_adyacentes(int * arb) {

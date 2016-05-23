@@ -15,7 +15,8 @@ int main(int argc, char *argv[])
 //  cin >> cad;
 //  cargarArbol(arb, cad.c_str());
 
-    cargar_arbol(arb, "6,10,12,-,-,-,1,-,9,5,-,3,-,-,2,-,-,-,-,-,-");
+    cargar_arbol(arb, "10,5,-,1,2,-,-,3,-,-,7,8,-,-,9,-,5");
+    //cargar_arbol(arb, "10,5,-,1,2,-,-,3,-,-,7,8,-,-,9,-,5,-,4");
     mostrar_arbol(arb);
 
     cout << "Maxima diferencia: " << maxima_diferencia_hojas_adyacentes(arb) << endl;

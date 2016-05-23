@@ -22,3 +22,26 @@
 	"lista.h"
 	<iostream>
 
+1461774181 source:c:\users\abel\documents\github\unicen\material\2do\c1\analisis_y_diseno_de_algoritmos_i\laboratorio\practicos_evaluados\practico_2\tp2-\arbol.cpp
+	"arbol.h"
+	"lista.h"
+	<climits>
+	<cmath>
+	<cstdlib>
+	<iostream>
+	<string>
+
+1461774181 c:\users\abel\documents\github\unicen\material\2do\c1\analisis_y_diseno_de_algoritmos_i\laboratorio\practicos_evaluados\practico_2\tp2-\arbol.h
+	"lista.h"
+
+1461774181 c:\users\abel\documents\github\unicen\material\2do\c1\analisis_y_diseno_de_algoritmos_i\laboratorio\practicos_evaluados\practico_2\tp2-\lista.h
+
+1461774181 source:c:\users\abel\documents\github\unicen\material\2do\c1\analisis_y_diseno_de_algoritmos_i\laboratorio\practicos_evaluados\practico_2\tp2-\lista.cpp
+	"lista.h"
+	<iostream>
+
+1461774181 source:c:\users\abel\documents\github\unicen\material\2do\c1\analisis_y_diseno_de_algoritmos_i\laboratorio\practicos_evaluados\practico_2\tp2-\main.cpp
+	"arbol.h"
+	"lista.h"
+	<iostream>
+
