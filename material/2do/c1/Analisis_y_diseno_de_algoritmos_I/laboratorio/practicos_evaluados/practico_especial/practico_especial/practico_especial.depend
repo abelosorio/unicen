@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1464354060 source:c:\users\abel\copiastrabajo\unicen\material\2do\c1\analisis_y_diseno_de_algoritmos_i\laboratorio\practicos_evaluados\practico_especial\practico_especial\lista.cpp
+	"lista.h"
+
+1464354064 c:\users\abel\copiastrabajo\unicen\material\2do\c1\analisis_y_diseno_de_algoritmos_i\laboratorio\practicos_evaluados\practico_especial\practico_especial\lista.h
+	<iostream>
+
+1464354097 source:c:\users\abel\copiastrabajo\unicen\material\2do\c1\analisis_y_diseno_de_algoritmos_i\laboratorio\practicos_evaluados\practico_especial\practico_especial\main.cpp
+	<iostream>
+	"lista.h"
+
