@@ -32,7 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="fila.h" />
+		<Unit filename="lista.cpp" />
+		<Unit filename="lista.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
