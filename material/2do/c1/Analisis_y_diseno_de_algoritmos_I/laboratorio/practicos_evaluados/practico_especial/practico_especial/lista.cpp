@@ -7,6 +7,7 @@ template <typename Elem>
 Lista<Elem>::Lista()
 {
     inicio = NULL;
+    punteroPosicion = 1;
 }
 
 /* Destructora del objeto.
@@ -16,21 +17,6 @@ template <typename Elem>
 Lista<Elem>::~Lista()
 {
     vaciar();
-}
-
-/* Función privada para crear un nuevo nodo de la lista.
- */
-template <typename Elem>
-Nodo * Lista<Elem>::crearNodo(Nodo * ant, Nodo * sig, Elem valor)
-{
-    Nodo * nuevo;
-
-    nuevo = new Nodo;
-    nuevo->anterior  = ant;
-    nuevo->elemento  = valor;
-    nuevo->siguiente = sig;
-
-    return nuevo;
 }
 
 /* Función para vaciar la lista.
@@ -45,7 +31,6 @@ void Lista<Elem>::vaciar()
         inicio->siguiente = aux;
     }
 
-    inicio->anterior = NULL;
     inicio->siguiente = NULL;
 }
 
@@ -54,7 +39,13 @@ void Lista<Elem>::vaciar()
 template <typename Elem>
 void Lista<Elem>::agregarPrincipioLista(Elem valor)
 {
-    inicio = crearNodo(NULL, inicio, valor);
+    Nodo * nuevo;
+
+    nuevo = new Nodo;
+    nuevo->siguiente = inicio;
+    nuevo->elemento = valor;
+
+    inicio = nuevo;
 }
 
 /* Función para agregar un elemento al final de la lista.
@@ -63,12 +54,17 @@ template <typename Elem>
 void Lista<Elem>::agregarFinalLista(Elem valor)
 {
     Nodo * aux = inicio;
+    Nodo * nuevo;
 
     if (aux != NULL) {
         while (aux->siguiente != NULL) {
             aux = aux->siguiente;
         }
-        aux->siguiente = crearNodo(aux, NULL, valor);
+        nuevo = new Nodo;
+        nuevo->siguiente = NULL;
+        nuevo->elemento = valor;
+
+        aux->siguiente = nuevo;
     } else {
         // La lista está vacía. Agregar el elemento al inicio o al final de
         // la lista, es lo mismo.
@@ -84,33 +80,120 @@ template <typename Elem>
 void Lista<Elem>::agregarLista(int posicion, Elem valor)
 {
     Nodo * aux = inicio;
+    Nodo * nuevo;
     int actual = 0;
 
     if (aux != NULL) {
         while (aux->siguiente != NULL and posicion < actual) {
             aux = aux->siguiente;
         }
-        aux = crearNodo(aux, aux->siguiente, valor);
+        nuevo = new Nodo;
+        nuevo->siguiente = aux->siguiente;
+        nuevo->elemento = valor;
+
+        aux = nuevo;
     } else {
         // La lista está vacía. Se agrega el elemento al principio.
         agregarPrincipioLista(valor);
     }
 }
 
-/* Función para mostrar la lista por salida estándar.
+/* Devuelve el tamaño de la lista (cantidad de elementos incluídos).
  */
 template <typename Elem>
-void Lista<Elem>::mostrarLista()
+int Lista<Elem>::longLista() const
 {
-    Nodo * aux;
-    aux = inicio;
+    Nodo * aux = inicio;
+    int longitud = 0;
 
     while (aux != NULL) {
-        cout << aux->elemento << " -> ";
+        longitud++;
         aux = aux->siguiente;
     }
 
-    cout << endl;
+    return longitud;
+}
+
+/* Función para determinar si un elemento está incluído en la lista.
+ */
+template <typename Elem>
+bool Lista<Elem>::estaIncluido(Elem buscado) const
+{
+    Nodo * aux = inicio;
+
+    while (aux != NULL) {
+        if (aux->elemento == buscado) {
+            return true;
+        }
+        aux = aux->siguiente;
+    }
+
+    return false;
+}
+
+/* Función para chequear si la lista está vacía.
+ */
+template <typename Elem>
+bool Lista<Elem>::estaVacia() const
+{
+    return (inicio == NULL);
+}
+
+/* Función para eliminar un elemento de una posición determinada.
+ */
+template <typename Elem>
+void Lista<Elem>::eliminarLista(int posicion)
+{
+    int actual = 1;
+    Nodo * aux = inicio;
+    Nodo * victima;
+    Nodo * anterior = NULL;
+
+    while ((aux != NULL) and (actual < posicion)) {
+        anterior = aux;
+        aux = aux->siguiente;
+        actual++;
+    }
+
+    if ((aux != NULL) and (actual == posicion)) {
+        victima = aux;
+
+        if (anterior != NULL) {
+            anterior->siguiente = aux->siguiente;
+        } else {
+            // Se está borrando el primer nodo, por lo tanto hay que
+            // actualizar el puntero de inicio de la lista.
+            inicio = aux->siguiente;
+        }
+
+        delete victima;
+    }
+}
+
+/* Función para obtener el primer valor de la lista.
+ */
+template <typename Elem>
+void Lista<Elem>::leerPrimero(Elem & primero)
+{
+    if (!estaVacia()) {
+        primero = inicio->elemento;
+        punteroPosicion = 2;
+        puntero = inicio->siguiente;
+    }
+}
+
+/* Función para obtener el próximo valor de la lista.
+ */
+template <typename Elem>
+void Lista<Elem>::leerSiguiente(Elem & siguiente)
+{
+    if (!estaVacia()) {
+        if (punteroPosicion <= longLista()) {
+            siguiente = puntero->elemento;
+            puntero = puntero->siguiente;
+            punteroPosicion++;
+        }
+    }
 }
 
 // Tipos para los cuales la clase está implementada

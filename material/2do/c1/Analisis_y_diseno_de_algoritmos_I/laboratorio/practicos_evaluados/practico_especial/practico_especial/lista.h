@@ -8,13 +8,17 @@ class Lista {
         struct Nodo {
             Elem elemento;
             Nodo * siguiente;
-            Nodo * anterior;
         };
         // Inicio de la lista.
         Nodo * inicio;
+        // Puntero para recorrer la lista. Indica la posición del elemento
+        // apuntado. Comienza en 1.
+        int punteroPosicion;
+        // Puntero para recorrer la lista. Es el puntero real del elemento
+        // apuntado.
+        Nodo * puntero = NULL;
         // Función para vaciar la lista.
         void vaciar();
-        Nodo * crearNodo(Nodo *, Nodo *, Elem);
 
     public:
         // Inicializadora de la lista.
@@ -34,7 +38,14 @@ class Lista {
         // Devuelve el elemento de una posición determinada.
         Elem recuperarLista(int);
         // Indica si un elemento está incluído en la lista.
-        bool estaIncluido(int);
-        // Función para mostrar la lista por salida estándar.
-        void mostrarLista();
+        bool estaIncluido(Elem) const;
+        // Función para chequear si la lista está vacía.
+        bool estaVacia() const;
+        // Función para mostrar el valor actual de la lista. El valor es
+        // almacenado en el parámetro que pasa por referencia.
+        void leerPrimero(Elem &);
+        // Función para obtener el próximo valor de la lista. El puntero
+        // se corre a la próxima posición. El valor es almacenado en el
+        // parámetro que pasa por referencia.
+        void leerSiguiente(Elem &);
 };
