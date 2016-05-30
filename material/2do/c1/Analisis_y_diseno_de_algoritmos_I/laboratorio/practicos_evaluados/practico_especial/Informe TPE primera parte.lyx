@@ -455,6 +455,16 @@ CLASS Arbin [Elemento]
 
 \begin_layout Plain Layout
 
+      esHoja: Arbin(t) * Elemento -> Boolean
+\end_layout
+
+\begin_layout Plain Layout
+
+        pre: not vacioArbin(t);
+\end_layout
+
+\begin_layout Plain Layout
+
 END-CLASS
 \end_layout
 
@@ -506,7 +516,8 @@ Todos los valores que estén almacenados en la rama izquierda serán menores
  La ventaja de utilizar esta estructura es que permite recorrer el árbol
  de manera recursiva obteniendo, en general, complejidades logarítmicas,
  y a su vez el espacio que ocupa en memoria es prácticamente sólo el que
- necesita para almacenar los valores contenidos.
+ necesita para almacenar los valores contenidos, sin necesidad de sobredimension
+ar ninguna estructura.
 \end_layout
 
 \begin_layout Section*
@@ -528,7 +539,7 @@ lista.h
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset listings
@@ -887,7 +898,7 @@ lista.cpp
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset listings
@@ -2039,6 +2050,10 @@ Implementación del TDA
 Arbin
 \end_layout
 
+\begin_layout Subsubsection*
+arbin.h
+\end_layout
+
 \begin_layout Standard
 \begin_inset Float algorithm
 placement H
@@ -2048,108 +2063,1573 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset listings
-lstparams "basicstyle={\normalsize\ttfamily}"
+lstparams "language={C++},basicstyle={\normalsize\ttfamily},tabsize=4"
 inline false
 status open
 
 \begin_layout Plain Layout
 
-CLASS Arbin [Elemento]
+#ifndef ARBOL_BINARIO_H_INCLUDED
 \end_layout
 
 \begin_layout Plain Layout
 
-  IMPORTS Nat, Lista
+#define ARBOL_BINARIO_H_INCLUDED
 \end_layout
 
 \begin_layout Plain Layout
 
-  BASIC CONSTRUCTORS inicArbin, agregarElemento
 \end_layout
 
 \begin_layout Plain Layout
 
-  EFFECTIVE
+#include <iostream>
 \end_layout
 
 \begin_layout Plain Layout
 
-    TYPE Arbin
+#include "lista.h"
 \end_layout
 
 \begin_layout Plain Layout
 
-    OPERATIONS
 \end_layout
 
 \begin_layout Plain Layout
 
-      inicArbin: -> Arbin;
+using namespace std;
 \end_layout
 
 \begin_layout Plain Layout
 
-      vacioArbin: Arbin -> Boolean;
 \end_layout
 
 \begin_layout Plain Layout
 
-      recuperarRaiz: Arbin(t) -> Elemento
+template <typename Elem>
 \end_layout
 
 \begin_layout Plain Layout
 
-        pre: not vacioArbin(t);
+class Arbin {
 \end_layout
 
 \begin_layout Plain Layout
 
-      agregarElemento: Arbin * Elemento -> Arbin;
+    private:
 \end_layout
 
 \begin_layout Plain Layout
 
-      listarInorden: Arbin(t) -> Lista
+        struct Nodo {
 \end_layout
 
 \begin_layout Plain Layout
 
-        pre: not vacioArbin(t);
+            Elem elemento;
 \end_layout
 
 \begin_layout Plain Layout
 
-      estaIncluido: Arbin(t) * Elemento -> Boolean
+            Nodo * subIzquierdo;
 \end_layout
 
 \begin_layout Plain Layout
 
-        pre: not vacioArbin(t);
+            Nodo * subDerecho;
 \end_layout
 
 \begin_layout Plain Layout
 
-      cantidadNodos: Arbin -> Nat;
+        };
 \end_layout
 
 \begin_layout Plain Layout
 
-      profundidad: Arbin -> Nat;
 \end_layout
 
 \begin_layout Plain Layout
 
-      construirFrontera: Arbin(t) -> Lista
+        // Nodo raíz del árbol binario.
 \end_layout
 
 \begin_layout Plain Layout
 
-        pre: not vacioArbin(t);
+        Nodo * raiz = NULL;
 \end_layout
 
 \begin_layout Plain Layout
 
-END-CLASS
+        // Función privada para eliminar todos los nodos del árbol.
+\end_layout
+
+\begin_layout Plain Layout
+
+        void vaciar(Nodo *);
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Función privada para agregar un elemento al árbol.
+\end_layout
+
+\begin_layout Plain Layout
+
+        void agregarElemento(Nodo *, Elem);
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Función privada para lista los elementos del árbol inorden.
+\end_layout
+
+\begin_layout Plain Layout
+
+        void listarInorden(Nodo *, Lista<Elem> * &) const;
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Función privada para determinar si un elemento está incluído
+ en el
+\end_layout
+
+\begin_layout Plain Layout
+
+        // árbol.
+\end_layout
+
+\begin_layout Plain Layout
+
+        void estaIncluido(Nodo *, Elem, bool &) const;
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Función privada para contar la cantidad de elementos del árbol.
+\end_layout
+
+\begin_layout Plain Layout
+
+        int cantidadNodos(Nodo *) const;
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Función privada para determinar la profundidad del árbol.
+\end_layout
+
+\begin_layout Plain Layout
+
+        int profundidad(Nodo *) const;
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Función para determinar si un nodo es hoja.
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Complejidad: O(1).
+\end_layout
+
+\begin_layout Plain Layout
+
+        bool esHoja(Nodo *) const;
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Función privada para construir la frontera del árbol.
+\end_layout
+
+\begin_layout Plain Layout
+
+        void construirFrontera(Nodo *, Lista<Elem> * &) const;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    public:
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Función constructora del árbol binario.
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Complejidad: O(1).
+\end_layout
+
+\begin_layout Plain Layout
+
+        Arbin();
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Función destructora del árbol.
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Complejidad: O(n).
+\end_layout
+
+\begin_layout Plain Layout
+
+        ~Arbin();
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Función para determinar si el árbol está vacío.
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Complejidad: O(1).
+\end_layout
+
+\begin_layout Plain Layout
+
+        bool vacioArbin() const;
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Función para obtener el elemento raíz del árbol.
+\end_layout
+
+\begin_layout Plain Layout
+
+        // El valor de la raíz se almacenará en el parámetro enviado.
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Complejidad: O(1).
+\end_layout
+
+\begin_layout Plain Layout
+
+        void recuperarRaiz(Elem &) const;
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Función para agregar un elemento al árbol.
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Complejidad: O(log(n)).
+\end_layout
+
+\begin_layout Plain Layout
+
+        void agregarElemento(Elem);
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Función para listar los elementos del árbol inorden.
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Los elementos se agregarán en la lista pasada como parámetro.
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Complejidad: O(n).
+\end_layout
+
+\begin_layout Plain Layout
+
+        void listarInorden(Lista<Elem> * &) const;
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Función para determinar si un elemento está incluído en el árbol.
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Complejidad: O(log(n)).
+\end_layout
+
+\begin_layout Plain Layout
+
+        bool estaIncluido(Elem) const;
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Función para contar la cantidad de nodos que tiene el árbol.
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Complejidad: O(n).
+\end_layout
+
+\begin_layout Plain Layout
+
+        int cantidadNodos() const;
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Función para determinar la profundidad del árbol.
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Complejidad: O(n).
+\end_layout
+
+\begin_layout Plain Layout
+
+        int profundidad() const;
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Función para construir la frontera del árbol.
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Los elementos de la frontera se agregarán en la lista pasada
+ como
+\end_layout
+
+\begin_layout Plain Layout
+
+        // parámetro.
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Complejidad: O(n).
+\end_layout
+
+\begin_layout Plain Layout
+
+        void construirFrontera(Lista<Elem> * &) const;
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+arbin.cpp
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "language={C++},basicstyle={\normalsize\ttfamily},tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#include "arbin.h"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/* Inicializadora del árbol binario.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+template <typename Elem>
+\end_layout
+
+\begin_layout Plain Layout
+
+Arbin<Elem>::Arbin()
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+    raiz = NULL;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/* Destructora del árbol binario.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * Ejecuta vaciar() para eliminar uno a uno los nodos del árbol.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+template <typename Elem>
+\end_layout
+
+\begin_layout Plain Layout
+
+Arbin<Elem>::~Arbin()
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+    vaciar(raiz);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/* Función para eliminar, uno a uno, todos los nodos del árbol binario.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+template <typename Elem>
+\end_layout
+
+\begin_layout Plain Layout
+
+void Arbin<Elem>::vaciar(Nodo * arbol)
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (arbol != NULL) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        vaciar(arbol->subIzquierdo);
+\end_layout
+
+\begin_layout Plain Layout
+
+        vaciar(arbol->subDerecho);
+\end_layout
+
+\begin_layout Plain Layout
+
+        delete arbol;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/* Función para determinar si el árbol binario está vacío.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+template <typename Elem>
+\end_layout
+
+\begin_layout Plain Layout
+
+bool Arbin<Elem>::vacioArbin() const
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+    return (raiz == NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/* Función para obtener el elemento raíz del árbol (si no está vacío).
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+template <typename Elem>
+\end_layout
+
+\begin_layout Plain Layout
+
+void Arbin<Elem>::recuperarRaiz(Elem & valor) const
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (!vacioArbin()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        valor = raiz->elemento;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/* Función privada para agregar un elemento al árbol binario.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+template <typename Elem>
+\end_layout
+
+\begin_layout Plain Layout
+
+void Arbin<Elem>::agregarElemento(Nodo * arbol, Elem elemento)
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (elemento <= arbol->elemento) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Insertar en rama izquierda
+\end_layout
+
+\begin_layout Plain Layout
+
+        if (arbol->subIzquierdo != NULL) {
+\end_layout
+
+\begin_layout Plain Layout
+
+            agregarElemento(arbol->subIzquierdo, elemento);
+\end_layout
+
+\begin_layout Plain Layout
+
+        } else {
+\end_layout
+
+\begin_layout Plain Layout
+
+            Nodo * nuevo;
+\end_layout
+
+\begin_layout Plain Layout
+
+            nuevo = new Nodo;
+\end_layout
+
+\begin_layout Plain Layout
+
+            nuevo->elemento = elemento;
+\end_layout
+
+\begin_layout Plain Layout
+
+            nuevo->subIzquierdo = NULL;
+\end_layout
+
+\begin_layout Plain Layout
+
+            nuevo->subDerecho = NULL;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+            arbol->subIzquierdo = nuevo;
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+    } else {
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Insertar en rama derecha
+\end_layout
+
+\begin_layout Plain Layout
+
+        if (arbol->subDerecho != NULL) {
+\end_layout
+
+\begin_layout Plain Layout
+
+            agregarElemento(arbol->subDerecho, elemento);
+\end_layout
+
+\begin_layout Plain Layout
+
+        } else {
+\end_layout
+
+\begin_layout Plain Layout
+
+            Nodo * nuevo;
+\end_layout
+
+\begin_layout Plain Layout
+
+            nuevo = new Nodo;
+\end_layout
+
+\begin_layout Plain Layout
+
+            nuevo->elemento = elemento;
+\end_layout
+
+\begin_layout Plain Layout
+
+            nuevo->subIzquierdo = NULL;
+\end_layout
+
+\begin_layout Plain Layout
+
+            nuevo->subDerecho = NULL;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+            arbol->subDerecho = nuevo;
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/* Función pública para agregar un elemento al árbol binario.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+template <typename Elem>
+\end_layout
+
+\begin_layout Plain Layout
+
+void Arbin<Elem>::agregarElemento(Elem elemento)
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (raiz == NULL) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        // El arbol está vacío
+\end_layout
+
+\begin_layout Plain Layout
+
+        Nodo * nuevo;
+\end_layout
+
+\begin_layout Plain Layout
+
+        nuevo = new Nodo;
+\end_layout
+
+\begin_layout Plain Layout
+
+        nuevo->elemento = elemento;
+\end_layout
+
+\begin_layout Plain Layout
+
+        nuevo->subIzquierdo = NULL;
+\end_layout
+
+\begin_layout Plain Layout
+
+        nuevo->subDerecho = NULL;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        raiz = nuevo;
+\end_layout
+
+\begin_layout Plain Layout
+
+    } else {
+\end_layout
+
+\begin_layout Plain Layout
+
+        agregarElemento(raiz, elemento);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/* Función privada para listar los elementos del árbol inorden.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+template <typename Elem>
+\end_layout
+
+\begin_layout Plain Layout
+
+void Arbin<Elem>::listarInorden(Nodo * arbol, Lista<Elem> * & lista) const
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (arbol != NULL) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        listarInorden(arbol->subIzquierdo, lista);
+\end_layout
+
+\begin_layout Plain Layout
+
+        lista->agregarFinalLista(arbol->elemento);
+\end_layout
+
+\begin_layout Plain Layout
+
+        listarInorden(arbol->subDerecho, lista);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/* Función pública para listar los elementos del árbol inorden.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+template <typename Elem>
+\end_layout
+
+\begin_layout Plain Layout
+
+void Arbin<Elem>::listarInorden(Lista<Elem> * & lista) const
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (!vacioArbin()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        listarInorden(raiz, lista);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/* Función privada para determinar si un elemento está en el árbol.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+template <typename Elem>
+\end_layout
+
+\begin_layout Plain Layout
+
+void Arbin<Elem>::estaIncluido(Nodo * arbol, Elem valor, bool & existe)
+ const
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (arbol != NULL) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        if (arbol->elemento == valor) {
+\end_layout
+
+\begin_layout Plain Layout
+
+            existe = true;
+\end_layout
+
+\begin_layout Plain Layout
+
+        } else {
+\end_layout
+
+\begin_layout Plain Layout
+
+            if (valor < arbol->elemento) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                estaIncluido(arbol->subIzquierdo, valor, existe);
+\end_layout
+
+\begin_layout Plain Layout
+
+            } else {
+\end_layout
+
+\begin_layout Plain Layout
+
+                estaIncluido(arbol->subDerecho, valor, existe);
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/* Función pública para determinar si un elemento está en el árbol.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+template <typename Elem>
+\end_layout
+
+\begin_layout Plain Layout
+
+bool Arbin<Elem>::estaIncluido(Elem valor) const
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (vacioArbin()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        return false;
+\end_layout
+
+\begin_layout Plain Layout
+
+    } else {
+\end_layout
+
+\begin_layout Plain Layout
+
+        bool existe = false;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        estaIncluido(raiz, valor, existe);
+\end_layout
+
+\begin_layout Plain Layout
+
+        return existe;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/* Función privada para contar la cantidad de elementos que tiene el árbol.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+template <typename Elem>
+\end_layout
+
+\begin_layout Plain Layout
+
+int Arbin<Elem>::cantidadNodos(Nodo * arbol) const
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (arbol == NULL) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+    } else {
+\end_layout
+
+\begin_layout Plain Layout
+
+        return (1 + cantidadNodos(arbol->subIzquierdo) + cantidadNodos(arbol->su
+bDerecho));
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/* Función pública para contar la cantidad de elementos que tiene el árbol.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+template <typename Elem>
+\end_layout
+
+\begin_layout Plain Layout
+
+int Arbin<Elem>::cantidadNodos() const
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+    return cantidadNodos(raiz);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/* Función privada para determinar la profundidad del árbol.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+template <typename Elem>
+\end_layout
+
+\begin_layout Plain Layout
+
+int Arbin<Elem>::profundidad(Nodo * arbol) const
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (arbol == NULL) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+    } else {
+\end_layout
+
+\begin_layout Plain Layout
+
+        return (1 + max(profundidad(arbol->subIzquierdo), profundidad(arbol->sub
+Derecho)));
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/* Función pública para determinar la profundidad del árbol.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+template <typename Elem>
+\end_layout
+
+\begin_layout Plain Layout
+
+int Arbin<Elem>::profundidad() const
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+    return profundidad(raiz);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/* Función para determinar si un nodo es hoja.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+template <typename Elem>
+\end_layout
+
+\begin_layout Plain Layout
+
+bool Arbin<Elem>::esHoja(Nodo * nodo) const
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+    return (nodo != NULL and nodo->subIzquierdo == NULL and nodo->subDerecho
+ == NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/* Función privada para construir la frontera del árbol.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+template <typename Elem>
+\end_layout
+
+\begin_layout Plain Layout
+
+void Arbin<Elem>::construirFrontera(Nodo * nodo, Lista<Elem> * & frontera)
+ const
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (nodo != NULL) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        if (esHoja(nodo)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+            frontera->agregarFinalLista(nodo->elemento);
+\end_layout
+
+\begin_layout Plain Layout
+
+        } else {
+\end_layout
+
+\begin_layout Plain Layout
+
+            construirFrontera(nodo->subIzquierdo, frontera);
+\end_layout
+
+\begin_layout Plain Layout
+
+            construirFrontera(nodo->subDerecho, frontera);
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/* Función privada para construir la frontera del árbol.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+template <typename Elem>
+\end_layout
+
+\begin_layout Plain Layout
+
+void Arbin<Elem>::construirFrontera(Lista<Elem> * & frontera) const
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (!vacioArbin()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        construirFrontera(raiz, frontera);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// Tipos para los cuales la clase está implementada
+\end_layout
+
+\begin_layout Plain Layout
+
+template class Arbin<unsigned int>;
+\end_layout
+
+\begin_layout Plain Layout
+
+template class Arbin<int>;
+\end_layout
+
+\begin_layout Plain Layout
+
+template class Arbin<float>;
+\end_layout
+
+\begin_layout Plain Layout
+
+template class Arbin<char>;
+\end_layout
+
+\begin_layout Plain Layout
+
+template class Arbin<string>;
 \end_layout
 
 \end_inset
