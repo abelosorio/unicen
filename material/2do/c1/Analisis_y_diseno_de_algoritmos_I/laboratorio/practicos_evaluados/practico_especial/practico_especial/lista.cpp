@@ -73,12 +73,14 @@ void Lista<Elem>::agregarFinalLista(Elem valor)
 }
 
 /* Función para agregar un elemento en una posición arbitraria de la lista.
- * Si la posición excede el número de elementos de la lista, entonces el
- * elemento se agrega al final de la misma.
  */
 template <typename Elem>
 void Lista<Elem>::agregarLista(int posicion, Elem valor)
 {
+    if ((posicion < 1) or (posicion > longLista()) or estaVacia()) {
+        return;
+    }
+
     Nodo * aux = inicio;
     Nodo * nuevo;
     int actual = 0;
@@ -119,6 +121,10 @@ int Lista<Elem>::longLista() const
 template <typename Elem>
 bool Lista<Elem>::estaIncluido(Elem buscado) const
 {
+    if (estaVacia()) {
+        return false;
+    }
+
     Nodo * aux = inicio;
 
     while (aux != NULL) {
@@ -144,30 +150,54 @@ bool Lista<Elem>::estaVacia() const
 template <typename Elem>
 void Lista<Elem>::eliminarLista(int posicion)
 {
+    // Si la posición es menor a 1 o excede la longitud de la lista, entonces
+    // no hago nada.
+    if ((posicion < 1) or (posicion > longLista()) or estaVacia()) {
+        return;
+    }
+
     int actual = 1;
     Nodo * aux = inicio;
     Nodo * victima;
     Nodo * anterior = NULL;
 
-    while ((aux != NULL) and (actual < posicion)) {
+    while (actual < posicion) {
         anterior = aux;
         aux = aux->siguiente;
         actual++;
     }
 
-    if ((aux != NULL) and (actual == posicion)) {
-        victima = aux;
+    victima = aux;
 
-        if (anterior != NULL) {
-            anterior->siguiente = aux->siguiente;
-        } else {
-            // Se está borrando el primer nodo, por lo tanto hay que
-            // actualizar el puntero de inicio de la lista.
-            inicio = aux->siguiente;
-        }
-
-        delete victima;
+    if (anterior != NULL) {
+        anterior->siguiente = aux->siguiente;
+    } else {
+        // Se está borrando el primer nodo, por lo tanto hay que
+        // actualizar el puntero de inicio de la lista.
+        inicio = aux->siguiente;
     }
+
+    delete victima;
+}
+
+/* Función para obtener un valor de la lista.
+ */
+template <typename Elem>
+void Lista<Elem>::recuperarLista(int posicion, Elem & valor) const
+{
+    if ((posicion < 1) or (posicion > longLista()) or estaVacia()) {
+        return;
+    }
+
+    int actual = 1;
+    Nodo * aux = inicio;
+
+    while (actual < posicion) {
+        actual++;
+        aux = aux->siguiente;
+    }
+
+    valor = aux->elemento;
 }
 
 /* Función para obtener el primer valor de la lista.

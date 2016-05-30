@@ -965,7 +965,7 @@ Lista<Elem>::Lista()
 
 \begin_layout Plain Layout
 
- */
+*/
 \end_layout
 
 \begin_layout Plain Layout
@@ -1583,128 +1583,29 @@ template <typename Elem>
 
 \begin_layout Plain Layout
 
-bool Lista<Elem>::estaVacia() const {
-\end_layout
-
-\begin_layout Plain Layout
-
-    return (inicio == NULL);
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\begin_layout Plain Layout
-
+bool Lista<Elem>::estaVacia() const {     return (inicio == NULL); }
 \end_layout
 
 \begin_layout Plain Layout
 
 /* Función para eliminar un elemento de una posición determinada.
+  */ template <typename Elem> void Lista<Elem>::eliminarLista(int posicion)
+ {     // Si la posición es menor a 1 o excede la longitud de la lista,
+ entonces     // no hago nada.
+     if ((posicion < 1) or (posicion > longLista()) or estaVacia()) {  
+       return;     }
 \end_layout
 
 \begin_layout Plain Layout
 
- */
+    int actual = 1;     Nodo * aux = inicio;     Nodo * victima;     Nodo
+ * anterior = NULL;
 \end_layout
 
 \begin_layout Plain Layout
 
-template <typename Elem>
-\end_layout
-
-\begin_layout Plain Layout
-
-void Lista<Elem>::eliminarLista(int posicion)
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\begin_layout Plain Layout
-
-    // Si la posición es menor a 1 o excede la longitud de la lista, entonces
-\end_layout
-
-\begin_layout Plain Layout
-
-    // no hago nada.
-\end_layout
-
-\begin_layout Plain Layout
-
-    if ((posicion < 1) or (posicion > longLista()) or estaVacia()) {
-\end_layout
-
-\begin_layout Plain Layout
-
-        return;
-\end_layout
-
-\begin_layout Plain Layout
-
-    }
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-    int actual = 1;
-\end_layout
-
-\begin_layout Plain Layout
-
-    Nodo * aux = inicio;
-\end_layout
-
-\begin_layout Plain Layout
-
-    Nodo * victima;
-\end_layout
-
-\begin_layout Plain Layout
-
-    Nodo * anterior = NULL;
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-    while (actual < posicion) {
-\end_layout
-
-\begin_layout Plain Layout
-
-        anterior = aux;
-\end_layout
-
-\begin_layout Plain Layout
-
-        aux = aux->siguiente;
-\end_layout
-
-\begin_layout Plain Layout
-
-        actual++;
-\end_layout
-
-\begin_layout Plain Layout
-
-    }
-\end_layout
-
-\begin_layout Plain Layout
-
+    while (actual < posicion) {         anterior = aux;         aux = aux->sigui
+ente;         actual++;     }
 \end_layout
 
 \begin_layout Plain Layout
@@ -1714,313 +1615,63 @@ void Lista<Elem>::eliminarLista(int posicion)
 
 \begin_layout Plain Layout
 
+    if (anterior != NULL) {         anterior->siguiente = aux->siguiente;
+     } else {         // Se está borrando el primer nodo, por lo tanto hay
+ que         // actualizar el puntero de inicio de la lista.
+         inicio = aux->siguiente;     }
 \end_layout
 
 \begin_layout Plain Layout
 
-    if (anterior != NULL) {
-\end_layout
-
-\begin_layout Plain Layout
-
-        anterior->siguiente = aux->siguiente;
-\end_layout
-
-\begin_layout Plain Layout
-
-    } else {
-\end_layout
-
-\begin_layout Plain Layout
-
-        // Se está borrando el primer nodo, por lo tanto hay que
-\end_layout
-
-\begin_layout Plain Layout
-
-        // actualizar el puntero de inicio de la lista.
-\end_layout
-
-\begin_layout Plain Layout
-
-        inicio = aux->siguiente;
-\end_layout
-
-\begin_layout Plain Layout
-
-    }
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-    delete victima;
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\begin_layout Plain Layout
-
+    delete victima; }
 \end_layout
 
 \begin_layout Plain Layout
 
 /* Función para obtener un valor de la lista.
+  */ template <typename Elem> void Lista<Elem>::recuperarLista(int posicion,
+ Elem & valor) const {     if ((posicion < 1) or (posicion > longLista())
+ or estaVacia()) {         return;     }
 \end_layout
 
 \begin_layout Plain Layout
 
- */
+    int actual = 1;     Nodo * aux = inicio;
 \end_layout
 
 \begin_layout Plain Layout
 
-template <typename Elem>
+    while (actual < posicion) {         actual++;         aux = aux->siguiente;
+     }
 \end_layout
 
 \begin_layout Plain Layout
 
-void Lista<Elem>::recuperarLista(int posicion, Elem & valor) const
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\begin_layout Plain Layout
-
-    if ((posicion < 1) or (posicion > longLista()) or estaVacia()) {
-\end_layout
-
-\begin_layout Plain Layout
-
-        return;
-\end_layout
-
-\begin_layout Plain Layout
-
-    }
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-    int actual = 1;
-\end_layout
-
-\begin_layout Plain Layout
-
-    Nodo * aux = inicio;
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-    while (actual < posicion) {
-\end_layout
-
-\begin_layout Plain Layout
-
-        actual++;
-\end_layout
-
-\begin_layout Plain Layout
-
-        aux = aux->siguiente;
-\end_layout
-
-\begin_layout Plain Layout
-
-    }
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-    valor = aux->elemento;
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\begin_layout Plain Layout
-
+    valor = aux->elemento; }
 \end_layout
 
 \begin_layout Plain Layout
 
 /* Función para obtener el primer valor de la lista.
-\end_layout
-
-\begin_layout Plain Layout
-
- */
-\end_layout
-
-\begin_layout Plain Layout
-
-template <typename Elem>
-\end_layout
-
-\begin_layout Plain Layout
-
-void Lista<Elem>::leerPrimero(Elem & primero)
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\begin_layout Plain Layout
-
-    if (!estaVacia()) {
-\end_layout
-
-\begin_layout Plain Layout
-
-        primero = inicio->elemento;
-\end_layout
-
-\begin_layout Plain Layout
-
-        punteroPosicion = 2;
-\end_layout
-
-\begin_layout Plain Layout
-
-        puntero = inicio->siguiente;
-\end_layout
-
-\begin_layout Plain Layout
-
-    }
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\begin_layout Plain Layout
-
+  */ template <typename Elem> void Lista<Elem>::leerPrimero(Elem & primero)
+ {     if (!estaVacia()) {         primero = inicio->elemento;         punteroPo
+sicion = 2;         puntero = inicio->siguiente;     } }
 \end_layout
 
 \begin_layout Plain Layout
 
 /* Función para obtener el próximo valor de la lista.
+  */ template <typename Elem> void Lista<Elem>::leerSiguiente(Elem & siguiente)
+ {     if (!estaVacia()) {         if (punteroPosicion <= longLista()) {
+             siguiente = puntero->elemento;             puntero = puntero->sigui
+ente;             punteroPosicion++;         }     } }
 \end_layout
 
 \begin_layout Plain Layout
 
- */
-\end_layout
-
-\begin_layout Plain Layout
-
-template <typename Elem>
-\end_layout
-
-\begin_layout Plain Layout
-
-void Lista<Elem>::leerSiguiente(Elem & siguiente)
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\begin_layout Plain Layout
-
-    if (!estaVacia()) {
-\end_layout
-
-\begin_layout Plain Layout
-
-        if (punteroPosicion <= longLista()) {
-\end_layout
-
-\begin_layout Plain Layout
-
-            siguiente = puntero->elemento;
-\end_layout
-
-\begin_layout Plain Layout
-
-            puntero = puntero->siguiente;
-\end_layout
-
-\begin_layout Plain Layout
-
-            punteroPosicion++;
-\end_layout
-
-\begin_layout Plain Layout
-
-        }
-\end_layout
-
-\begin_layout Plain Layout
-
-    }
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-// Tipos para los cuales la clase está implementada
-\end_layout
-
-\begin_layout Plain Layout
-
-template class Lista<unsigned int>;
-\end_layout
-
-\begin_layout Plain Layout
-
-template class Lista<int>;
-\end_layout
-
-\begin_layout Plain Layout
-
-template class Lista<float>;
-\end_layout
-
-\begin_layout Plain Layout
-
-template class Lista<char>;
-\end_layout
-
-\begin_layout Plain Layout
-
-template class Lista<string>;
+// Tipos para los cuales la clase está implementada template class Lista<unsigne
+d int>; template class Lista<int>; template class Lista<float>; template
+ class Lista<char>; template class Lista<string>;
 \end_layout
 
 \end_inset
