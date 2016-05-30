@@ -28,7 +28,7 @@
 \spacing single
 \use_hyperref false
 \papersize default
-\use_geometry false
+\use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -52,11 +52,15 @@
 \shortcut idx
 \color #008000
 \end_index
+\leftmargin 1cm
+\topmargin 2cm
+\rightmargin 1cm
+\bottommargin 2cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\quotes_language french
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -85,39 +89,15 @@ Integrantes
 \end_layout
 
 \begin_layout Description
-Nombre
-\begin_inset space ~
-\end_inset
-
-y
-\begin_inset space ~
-\end_inset
-
-apellido: Abel Matías Osorio.
+Nombre y apellido: Abel Matías Osorio.
 \end_layout
 
 \begin_layout Description
-Correo
-\begin_inset space ~
-\end_inset
-
-electrónico: abel.m.osorio@gmail.com.
+Correo electrónico: abel.m.osorio@gmail.com.
 \end_layout
 
 \begin_layout Description
-Número
-\begin_inset space ~
-\end_inset
-
-de
-\begin_inset space ~
-\end_inset
-
-grupo: 
-\emph on
-60
-\emph default
-.
+Número de grupo: 60.
 \end_layout
 
 \begin_layout Description
@@ -125,35 +105,15 @@ Ayudante: Rubi, Pablo.
 \end_layout
 
 \begin_layout Section*
-Especificación formal en 
-\noun on
-Nereus
-\noun default
- y estructuras de datos
+Especificación formal en Nereus y estructuras de datos
 \end_layout
 
 \begin_layout Subsection*
-TDA 
-\begin_inset Quotes eld
-\end_inset
-
-Lista
-\begin_inset Quotes erd
-\end_inset
-
-
+TDA “Lista”
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \begin_inset listings
-lstparams "basicstyle={\normalsize\ttfamily}"
 inline false
 status open
 
@@ -175,22 +135,12 @@ CLASS Fila [Elemento]
 
 \begin_layout Plain Layout
 
-  EFFECTIVE
+  EFFECTIVE     TYPE Lista
 \end_layout
 
 \begin_layout Plain Layout
 
-    TYPE Lista
-\end_layout
-
-\begin_layout Plain Layout
-
-    OPERATIONS
-\end_layout
-
-\begin_layout Plain Layout
-
-      inicLista: -> Lista;
+    OPERATIONS       inicLista: -> Lista;
 \end_layout
 
 \begin_layout Plain Layout
@@ -283,11 +233,6 @@ END-CLASS
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsubsection*
 Estructura de datos utilizada
 \end_layout
@@ -297,13 +242,10 @@ Para implementar el TDA
 \emph on
 Lista
 \emph default
- se utilizó un 
+ se utilizó un struct 
 \emph on
-struct 
-\emph default
-\noun on
 Nodo
-\noun default
+\emph default
  con los siguientes atributos:
 \end_layout
 
@@ -334,25 +276,10 @@ Esta estructura permite una fácil implemenación de la lista, y además permite
 \end_layout
 
 \begin_layout Subsection*
-TDA 
-\begin_inset Quotes eld
-\end_inset
-
-Arbol
-\begin_inset Quotes erd
-\end_inset
-
-
+TDA “Arbol”
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \begin_inset listings
 lstparams "basicstyle={\normalsize\ttfamily}"
 inline false
@@ -473,11 +400,6 @@ END-CLASS
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsubsection*
 Estructura de datos utilizada
 \end_layout
@@ -487,14 +409,10 @@ Para implementar el TDA
 \emph on
 Arbin
 \emph default
- se utilizó una estructura recursiva de 
+ se utilizó una estructura recursiva de structs 
 \emph on
-structs
-\emph default
- 
-\noun on
 Nodo
-\noun default
+\emph default
  con los siguientes atributos:
 \end_layout
 
@@ -535,13 +453,6 @@ lista.h
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
 \begin_inset listings
 lstparams "language={C++},basicstyle={\normalsize\ttfamily},tabsize=4"
 inline false
@@ -844,7 +755,9 @@ class Lista {
 
 \begin_layout Plain Layout
 
-        void leerPrimero(Elem &);
+        void leerPrimero(Elem 
+\backslash
+I&);
 \end_layout
 
 \begin_layout Plain Layout
@@ -884,23 +797,11 @@ class Lista {
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsubsection*
 lista.cpp
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
 \begin_inset listings
 lstparams "language={C++},basicstyle={\normalsize\ttfamily},tabsize=4"
 inline false
@@ -2039,15 +1940,8 @@ template class Lista<string>;
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection*
-Implementación del TDA 
-\emph on
-Arbin
+Implementación del TDA Arbin
 \end_layout
 
 \begin_layout Subsubsection*
@@ -2055,13 +1949,6 @@ arbin.h
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
 \begin_inset listings
 lstparams "language={C++},basicstyle={\normalsize\ttfamily},tabsize=4"
 inline false
@@ -2448,23 +2335,11 @@ class Arbin {
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsubsection*
 arbin.cpp
 \end_layout
 
-\begin_layout Subsubsection*
-\begin_inset Float algorithm
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset listings
 lstparams "language={C++},basicstyle={\normalsize\ttfamily},tabsize=4"
 inline false
@@ -2677,7 +2552,9 @@ template <typename Elem>
 
 \begin_layout Plain Layout
 
-void Arbin<Elem>::recuperarRaiz(Elem & valor) const
+void Arbin<Elem>::recuperarRaiz(Elem I
+\backslash
+& valor) const
 \end_layout
 
 \begin_layout Plain Layout
@@ -2986,7 +2863,9 @@ template <typename Elem>
 
 \begin_layout Plain Layout
 
-void Arbin<Elem>::listarInorden(Nodo * arbol, Lista<Elem> * & lista) const
+void Arbin<Elem>::listarInorden(Nodo * arbol, Lista<Elem> * I
+\backslash
+& lista) const
 \end_layout
 
 \begin_layout Plain Layout
@@ -3045,7 +2924,9 @@ template <typename Elem>
 
 \begin_layout Plain Layout
 
-void Arbin<Elem>::listarInorden(Lista<Elem> * & lista) const
+void Arbin<Elem>::listarInorden(Lista<Elem> * I
+\backslash
+& lista) const
 \end_layout
 
 \begin_layout Plain Layout
@@ -3094,8 +2975,9 @@ template <typename Elem>
 
 \begin_layout Plain Layout
 
-void Arbin<Elem>::estaIncluido(Nodo * arbol, Elem valor, bool & existe)
- const
+void Arbin<Elem>::estaIncluido(Nodo * arbol, Elem valor, bool I
+\backslash
+& existe) const
 \end_layout
 
 \begin_layout Plain Layout
@@ -3495,8 +3377,9 @@ template <typename Elem>
 
 \begin_layout Plain Layout
 
-void Arbin<Elem>::construirFrontera(Nodo * nodo, Lista<Elem> * & frontera)
- const
+void Arbin<Elem>::construirFrontera(Nodo * nodo, Lista<Elem> * I
+\backslash
+& frontera) const
 \end_layout
 
 \begin_layout Plain Layout
@@ -3570,7 +3453,9 @@ template <typename Elem>
 
 \begin_layout Plain Layout
 
-void Arbin<Elem>::construirFrontera(Lista<Elem> * & frontera) const
+void Arbin<Elem>::construirFrontera(Lista<Elem> * I
+\backslash
+& frontera) const
 \end_layout
 
 \begin_layout Plain Layout
@@ -3630,11 +3515,6 @@ template class Arbin<char>;
 \begin_layout Plain Layout
 
 template class Arbin<string>;
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
